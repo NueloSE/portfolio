@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/71207c461d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>nuelo portifolio</title>
   </head>
   <body>
@@ -38,11 +49,16 @@
         </div>
 
         <div class="absolute bottom-0 pb-8">
-          <img
-            src="./images/arrow-down.svg"
-            alt=""
-            class="w-12 h-12 transition duration-400 animate-bounce"
-          />
+          <svg
+            class="w-12 fill-purple-700 transition duration-400 animate-bounce"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+          >
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM303 441L223 361C213.6 351.6 213.6 336.4 223 327.1C232.4 317.8 247.6 317.7 256.9 327.1L295.9 366.1L295.9 216C295.9 202.7 306.6 192 319.9 192C333.2 192 343.9 202.7 343.9 216L343.9 366.1L382.9 327.1C392.3 317.7 407.5 317.7 416.8 327.1C426.1 336.5 426.2 351.7 416.8 361L336.8 441C327.4 450.4 312.2 450.4 302.9 441z"
+            />
+          </svg>
         </div>
       </header>
     </section>
@@ -77,9 +93,6 @@
             </li>
             <li>
               <a href="#" class="cta-btn">Resume</a>
-              <!-- <div
-              class="link-underline"
-            ></div> -->
             </li>
           </ul>
 
@@ -124,8 +137,9 @@
               <span class="emphasize">fast-paced</span> environments, leveraging
               <span class="emphasize">problem-solving</span> and
               <span class="emphasize">mentoring</span> skills to deliver
-              impactful solutions. My goal is to build innovative,
-              <span class="emphasize">optimal</span>,
+              impactful solutions. My goal is to build
+              <span class="emphasize">innovative</span>,
+              <span class="emphasize">optimized</span>,
               <span class="emphasize">accessible</span>
               web experiences while growing in Web development. Check out my
               projects to see my work in action, and let’s connect to create
@@ -268,20 +282,28 @@
       </section>
 
       <!-- My projects section-->
-      <section>
-        <h4 class="section-title">My Projects</h4>
+      <section class="my-16">
+        <h4 class="section-title">Selected Projects</h4>
 
         <!-- projects catalogue -->
-        <div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-[1200px] mx-auto mt-6">
           <!-- project one -->
           <div
-            class="hover:border-4 border-purple-500 shadow-2xl rounded-4xl  mx-16 max-w-sm lg:max-w-[800px] md:mx-0 space-y-6"
+            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
           >
-            <img src="./images/moody-screenshot.png" alt="" class="rounded-t-4xl"/>
-            <div class="px-8 text-center md:text-left">
-              <h5 class="subtitle mt-1.5 ">Moody Application</h5>
+            <a href="https://moody-nine-chi.vercel.app/" target="_blank"
+              ><img
+                src="./images/moody-screenshot.png"
+                alt=""
+                class="rounded-t-4xl"
+            /></a>
 
-              <p class="max-w-sm lg:max-w-lg py-4 text-justify">
+            <div
+              class="flex flex-col justify-between px-8 text-center md:text-left"
+            >
+              <h5 class="subtitle mt-1.5">Moody Application</h5>
+
+              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
                 A web app built with Firebase for user authentication and data
                 storage, enabling users to sign in and log their daily moods
                 with optional emoji support. Features include filtering recorded
@@ -292,16 +314,178 @@
 
               <div>
                 <ul class="flex justify-between pb-4">
-                  <li>
-                    <a class="text-purple-700" href="https://moody-nine-chi.vercel.app/" target="_blank"
-                      >View Project &rBarr;</a
-                    >
+                  <li class="group">
+                    <a
+                      href="https://moody-nine-chi.vercel.app/"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >View Project<span class="material-symbols-outlined">
+                        open_in_new
+                      </span>
+                    </a>
                   </li>
-                  <li>
+                  <li class="group">
                     <a
                       href="https://github.com/NueloSE/fe-mentors/tree/main/moody"
                       target="_blank"
-                      >Code</a
+                      class="group-hover:scale-105 duration-125"
+                      >Code
+                      <span class="material-symbols-outlined">
+                        open_in_new
+                      </span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- project 2 -->
+          <div
+            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+          >
+            <a href="https://beamx-meme.vercel.app/" target="_blank"
+              ><img src="./images/beamx.png" alt="" class="rounded-t-4xl"
+            /></a>
+
+            <div
+              class="flex flex-col justify-between px-8 text-center md:text-left"
+            >
+              <h5 class="subtitle mt-1.5">BeamX Dapp</h5>
+
+              <p class="max-w-sm lg:max-w-lg py-4 text-justify min-h-[240px]">
+                A user-friendly web app, enabling easy memecoin creation on
+                StarkNet’s Ekubo Protocol using natural language prompts.
+                Features include one-click token deployment, automatic parameter
+                extraction (name, symbol, supply, decimals), and instant
+                StarkScan verification links. No blockchain expertise needed.
+              </p>
+
+              <div>
+                <ul class="flex justify-between pb-4">
+                  <li class="group">
+                    <a
+                      href="https://beamx-meme.vercel.app/"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >View Project<span class="material-symbols-outlined">
+                        open_in_new
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group">
+                    <a
+                      href="https://github.com/NueloSE/beamx"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >Code
+                      <span class="material-symbols-outlined">
+                        open_in_new
+                      </span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- project 3 -->
+          <div
+            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+          >
+            <a
+              href="https://clipboard-landing-page-xi-two.vercel.app/"
+              target="_blank"
+              ><img
+                src="./images/clipboard-app-screenshot.png"
+                alt=""
+                class="rounded-t-4xl"
+            /></a>
+
+            <div
+              class="flex flex-col justify-between px-8 text-center md:text-left"
+            >
+              <h5 class="subtitle mt-1.5">Clipboard Landing Page</h5>
+
+              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
+                A responsive HTML and Tailwind CSS project showcasing UI design
+                skills. Features a hero section, feature highlights, and footer
+                with hover states and curved borders for visual appeal, built to
+                match provided mockups pixel-perfectly.
+              </p>
+
+              <div>
+                <ul class="flex justify-between pb-4">
+                  <li class="group">
+                    <a
+                      href="https://clipboard-landing-page-xi-two.vercel.app/"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >View Project<span class="material-symbols-outlined">
+                        open_in_new
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group">
+                    <a
+                      href="https://github.com/NueloSE/tailwind-projects/tree/main/clipboard"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >Code
+                      <span class="material-symbols-outlined">
+                        open_in_new
+                      </span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- project 4 -->
+          <div
+            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+          >
+            <a href="https://gitprofile-explorer.vercel.app/" target="_blank"
+              ><img
+                src="./images/gitexplorer-screenshot.png"
+                alt=""
+                class="rounded-t-4xl h-1/2"
+            /></a>
+
+            <div
+              class="flex flex-col justify-between px-8 pt-6 text-center md:text-left"
+            >
+              <h5 class="subtitle mt-1.5">Gitprofile Explorer</h5>
+
+              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
+                A React-based web app using the GitHub API to search for user
+                profiles by username, location, or repository count. Features
+                include basic and advanced search, error handling, and a clean
+                design, developed as part of the ALX Front-End ReactJS track.
+              </p>
+
+              <div>
+                <ul class="flex justify-between pb-4">
+                  <li class="group">
+                    <a
+                      href="https://gitprofile-explorer.vercel.app/"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >View Project<span class="material-symbols-outlined">
+                        open_in_new
+                      </span>
+                    </a>
+                  </li>
+                  <li class="group">
+                    <a
+                      href="https://github.com/NueloSE/alx-fe-reactjs/tree/main/github-user-search"
+                      target="_blank"
+                      class="group-hover:scale-105 duration-125"
+                      >Code
+                      <span class="material-symbols-outlined">
+                        open_in_new
+                      </span></a
                     >
                   </li>
                 </ul>
