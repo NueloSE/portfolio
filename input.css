@@ -21,11 +21,12 @@
 }
 
 @layer base {
-
-  
+  html {
+    @apply scroll-smooth;
+  }
 
   a {
-    @apply font-alata text-purple-700 flex;
+    @apply font-alata  flex;
   }
 
   h2 {
@@ -35,6 +36,18 @@
   h3 {
     @apply uppercase text-white my-8 text-sm md:text-2xl;
   }
+
+  input {
+    @apply focus:outline-0 block border border-slate-400 w-full rounded-full px-4 py-1 bg-white;
+  }
+
+  textarea {
+    @apply focus:outline-0 block border border-slate-400 w-full rounded-2xl px-4 py-1 bg-white;
+  }
+
+  label {
+    @apply font-extralight;
+  }
 }
 
 @layer components {
@@ -43,15 +56,15 @@
   }
 
   .btn-pry {
-    @apply bg-white text-purple-700 hover:text-white hover:bg-purple-700;
+    @apply bg-white text-purple-900 hover:text-white hover:bg-purple-700;
   }
 
   .btn-sec {
-    @apply text-white;
+    @apply text-purple-100 bg-purple-900 border-0; 
   }
 
   .cta-btn {
-    @apply border px-3 py-1 rounded-full bg-purple-700 text-white;
+    @apply border px-3 py-1 rounded-full bg-purple-700 text-white cursor-pointer;
   }
 
   .link {
@@ -60,6 +73,10 @@
 
   .link-underline {
     @apply border-t-2 border-purple-900 m-1 opacity-0 group-hover:opacity-100;
+  }
+
+  .logo {
+    @apply w-6 md:w-8;
   }
 
   .section-title {
@@ -73,17 +90,21 @@
   .subtitle {
     @apply text-lg font-extrabold;
   }
-}
 
+  .icon {
+    @apply text-purple-700 pr-2;
+  }
+
+  .icon2 {
+    @apply text-2xl md:text-4xl !text-slate-500 hover:!text-purple-800 hover:scale-105
+  }
+
+  input::placeholder {
+    @apply text-slate-700 text-sm;
+  }
+}
 
 .material-symbols-outlined {
   @apply text-purple-700;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 300,
-  'GRAD' 0,
-  'opsz' 20
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
 }
-
-
-

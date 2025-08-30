@@ -28,11 +28,11 @@
     <!-- header section -->
     <section>
       <header
-        class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/dark-bg.jpg')] bg-cover bg-center bg-no-repeat relative"
+        class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
       >
         <div class="flex flex-col justify-center items-center text-center px-4">
           <img src="" alt="" />
-          <h2>
+          <h2 class="text-purple-950 font-extrabold">
             emmaNUEL akaLO <br />&lt;
             <span
               class="transition duration-200 animate-pulse cursor-pointer hover:animate-none"
@@ -40,7 +40,7 @@
             >
             /&gt;
           </h2>
-          <h3 class="font-extralight">Web Developer</h3>
+          <h3 class="font-extralight text-purple-950">Web Developer</h3>
 
           <div class="flex flex-col md:flex-row gap-8">
             <button class="btn btn-pry">Hire Me</button>
@@ -49,30 +49,24 @@
         </div>
 
         <div class="absolute bottom-0 pb-8">
-          <svg
-            class="w-12 fill-purple-700 transition duration-400 animate-bounce"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640"
-          >
-            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-            <path
-              d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM303 441L223 361C213.6 351.6 213.6 336.4 223 327.1C232.4 317.8 247.6 317.7 256.9 327.1L295.9 366.1L295.9 216C295.9 202.7 306.6 192 319.9 192C333.2 192 343.9 202.7 343.9 216L343.9 366.1L382.9 327.1C392.3 317.7 407.5 317.7 416.8 327.1C426.1 336.5 426.2 351.7 416.8 361L336.8 441C327.4 450.4 312.2 450.4 302.9 441z"
-            />
-          </svg>
+          <a href="#about">
+            <i
+              class="fa-solid fa-circle-arrow-down text-4xl md:text-6xl text-purple-400 transition duration-200 animate-bounce"
+            ></i>
+          </a>
         </div>
       </header>
     </section>
-    <!-- main sections -->
 
+    <!-- main sections -->
     <section>
       <!-- navigation menu -->
-
       <div class="">
         <nav
           class="flex justify-between items-center p-10 max-w-[2600px] mx-auto"
         >
           <div>
-            <img src="./images/logo.png" alt="" class="w-16" />
+            <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
           </div>
           <ul class="hidden md:flex gap-8">
             <li class="group">
@@ -92,7 +86,12 @@
               <div class="link-underline"></div>
             </li>
             <li>
-              <a href="#" class="cta-btn">Resume</a>
+              <a
+                href="./images/nuelo-resume.pdf"
+                target="_blank"
+                class="cta-btn"
+                >Resume</a
+              >
             </li>
           </ul>
 
@@ -101,8 +100,8 @@
           <!-- todo hamburger menu -->
         </nav>
       </div>
-      <!-- about section -->
 
+      <!-- about section -->
       <section>
         <div
           class="flex flex-col justify-center items-center px-10 md:flex-row max-w-[1300px] mx-auto"
@@ -150,8 +149,7 @@
       </section>
 
       <!-- skills section -->
-
-      <section>
+      <section id="skills">
         <h4 class="section-title">My Skills</h4>
         <!-- skills container -->
         <div
@@ -159,7 +157,7 @@
         >
           <!-- container 1 -->
           <div
-            class="hover:border-4 border-purple-500 shadow-2xl rounded-xl p-8 mx-16 max-w-sm md:mx-0 lg:max-w-[800px]"
+            class="hover:border-4 border-purple-500 shadow-2xl rounded-xl p-8 mx-16 md:mx-0 max-w-sm lg:max-w-[800px]"
           >
             <!-- sub-skill title -->
             <div class="flex items-center gap-2">
@@ -282,20 +280,20 @@
       </section>
 
       <!-- My projects section-->
-      <section class="my-16">
+      <section id="projects" class="my-16">
         <h4 class="section-title">Selected Projects</h4>
 
         <!-- projects catalogue -->
         <div class="grid md:grid-cols-2 gap-6 max-w-[1200px] mx-auto mt-6">
           <!-- project one -->
           <div
-            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+            class="w-full hover:border-4 border-[#fbcb21] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
           >
             <a href="https://moody-nine-chi.vercel.app/" target="_blank"
               ><img
                 src="./images/moody-screenshot.png"
                 alt=""
-                class="rounded-t-4xl"
+                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
             /></a>
 
             <div
@@ -303,7 +301,7 @@
             >
               <h5 class="subtitle mt-1.5">Moody Application</h5>
 
-              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
+              <p class="min-h-[150px] max-w-sm lg:max-w-lg py-4 text-justify">
                 A web app built with Firebase for user authentication and data
                 storage, enabling users to sign in and log their daily moods
                 with optional emoji support. Features include filtering recorded
@@ -342,10 +340,13 @@
 
           <!-- project 2 -->
           <div
-            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+            class="w-full hover:border-4 border-purple-700 border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
           >
             <a href="https://beamx-meme.vercel.app/" target="_blank"
-              ><img src="./images/beamx.png" alt="" class="rounded-t-4xl"
+              ><img
+                src="./images/beamx.png"
+                alt=""
+                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
             /></a>
 
             <div
@@ -353,7 +354,7 @@
             >
               <h5 class="subtitle mt-1.5">BeamX Dapp</h5>
 
-              <p class="max-w-sm lg:max-w-lg py-4 text-justify min-h-[240px]">
+              <p class="max-w-sm lg:max-w-lg py-4 text-justify min-h-[180px]">
                 A user-friendly web app, enabling easy memecoin creation on
                 StarkNet’s Ekubo Protocol using natural language prompts.
                 Features include one-click token deployment, automatic parameter
@@ -391,7 +392,7 @@
 
           <!-- project 3 -->
           <div
-            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+            class="w-full hover:border-4 border-[#21b9a2] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
           >
             <a
               href="https://clipboard-landing-page-xi-two.vercel.app/"
@@ -399,7 +400,7 @@
               ><img
                 src="./images/clipboard-app-screenshot.png"
                 alt=""
-                class="rounded-t-4xl"
+                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
             /></a>
 
             <div
@@ -407,7 +408,7 @@
             >
               <h5 class="subtitle mt-1.5">Clipboard Landing Page</h5>
 
-              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
+              <p class="min-h-[180px] max-w-sm lg:max-w-lg py-4 text-justify">
                 A responsive HTML and Tailwind CSS project showcasing UI design
                 skills. Features a hero section, feature highlights, and footer
                 with hover states and curved borders for visual appeal, built to
@@ -444,21 +445,21 @@
 
           <!-- project 4 -->
           <div
-            class="w-full hover:border-4 border-purple-500 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
+            class="w-full hover:border-4 border-[#1a1a1a] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
           >
             <a href="https://gitprofile-explorer.vercel.app/" target="_blank"
               ><img
                 src="./images/gitexplorer-screenshot.png"
                 alt=""
-                class="rounded-t-4xl h-1/2"
+                class="rounded-t-4xl h-[240px] w-full object-cover object-bottom"
             /></a>
 
             <div
-              class="flex flex-col justify-between px-8 pt-6 text-center md:text-left"
+              class="flex flex-col justify-between px-8 text-center md:text-left"
             >
               <h5 class="subtitle mt-1.5">Gitprofile Explorer</h5>
 
-              <p class="min-h-[240px] max-w-sm lg:max-w-lg py-4 text-justify">
+              <p class="min-h-[180px] max-w-sm lg:max-w-lg py-4 text-justify">
                 A React-based web app using the GitHub API to search for user
                 profiles by username, location, or repository count. Features
                 include basic and advanced search, error handling, and a clean
@@ -494,6 +495,109 @@
           </div>
         </div>
       </section>
+
+      <!-- contact section -->
+      <section id="contact">
+        <h4 class="section-title">Get In Touch</h4>
+
+        <div
+          class="flex flex-col gap-4 md:items-center md:flex-row max-w-[1300px] mx-auto px-8"
+        >
+          <!-- text content -->
+          <div class="w-fit mx-auto text-center md:text-left">
+            <h5 class="subtitle mt-1.5">Let's talk about your project</h5>
+            <p class="max-w-sm lg:max-w-lg py-4 text-justify">
+              Interested in working together? Fill out the form and I'll get
+              back to you as soon as possible. Let's create something amazing
+              together!
+            </p>
+            <ul>
+              <li>
+                <span class="fa-solid fa-envelope icon"></span
+                >nuelakalo@gmail.com
+              </li>
+
+              <li>
+                <span class="fa-solid fa-phone icon"></span>(+234)816-168-5012
+              </li>
+              <li>
+                <span class="fa-solid fa-location-dot icon"></span>Kaduna,
+                Nigeria
+              </li>
+            </ul>
+          </div>
+
+          <!-- form content -->
+          <form
+            class="bg-cyan-50/40 bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4"
+          >
+            <div>
+              <label for="name">Your Name</label>
+              <input type="text" placeholder="Enter your name" />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="email" placeholder="Enter your email" />
+            </div>
+
+            <div>
+              <label for="project">Subject</label>
+              <input type="text" placeholder="Enter Project Title" />
+            </div>
+
+            <div>
+              <label for="message">Your Message</label>
+              <textarea name="message" id="message" rows="5"></textarea>
+            </div>
+            <button class="cta-btn w-full py-3 hover:-translate-y-1.5">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
     </section>
+
+    <footer class="text-slate-500">
+      <div class="text-center px-4 mt-16 py-6 bg-slate-900">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center max-w-3xl mx-auto"
+        >
+          <div>
+            <a href="#"
+              ><img
+                src="./images/logo.png"
+                alt="nuelo brand logo"
+                class="logo mx-auto mb-4"
+            /></a>
+          </div>
+
+          <small
+            >&copy;2025 nuelo . All rights reserved . Built with passion and
+            precision</small
+          >
+
+          <ul class="flex justify-center gap-4 py-4">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/emmanuel-akalo/"
+                target="_blank"
+                ><span class="fa-brands fa-linkedin icon2"></span
+              ></a>
+            </li>
+            <li>
+              <a href="https://github.com/nuelose" target="_blank"
+                ><span class="fa-brands fa-square-github icon2"></span
+              ></a>
+            </li>
+            <li>
+              <a href="https://x.com/isNuelo" target="_blank"
+                ><span class="fa-brands fa-square-x-twitter icon2"></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
