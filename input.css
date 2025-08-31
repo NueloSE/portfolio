@@ -76,7 +76,7 @@
   }
 
   .logo {
-    @apply w-6 md:w-8;
+    @apply w-10 md:w-16;
   }
 
   /* hamburger */
@@ -88,7 +88,7 @@
   .hamburger1,
   .hamburger2,
   .hamburger3 {
-    @apply w-8 h-1 bg-slate-300 absolute;
+    @apply w-8 h-1 bg-slate-700 absolute rounded-full;
   }
 
   .hamburger1 {
@@ -96,7 +96,7 @@
   }
 
   .hamburger2 {
-    @apply top-2 w-5 right-0;
+    @apply top-2 w-6 right-0;
   }
 
   .hamburger3 {
