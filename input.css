@@ -46,7 +46,7 @@
   }
 
   label {
-    @apply font-extralight;
+    @apply font-light text-black;
   }
 }
 
@@ -68,7 +68,7 @@
   }
 
   .link {
-      @apply hover:scale-110
+    @apply hover:scale-110;
   }
 
   .link-underline {
@@ -104,7 +104,7 @@
   }
 
   .toggleMenu .hamburger1 {
-    @apply transition-all duration-150 rotate-45 -translate-x-1 translate-y-2
+    @apply transition-all duration-150 rotate-45 -translate-x-1 translate-y-2;
   }
 
   .toggleMenu .hamburger2 {
@@ -112,7 +112,7 @@
   }
 
   .toggleMenu .hamburger3 {
-    @apply transition-all duration-150 -rotate-45 -translate-x-1 -translate-y-2
+    @apply transition-all duration-150 -rotate-45 -translate-x-1 -translate-y-2;
   }
 
   .section-title {
@@ -136,7 +136,7 @@
   }
 
   input::placeholder {
-    @apply text-slate-700 text-sm;
+    @apply text-slate-400 text-sm;
   }
 }
 
