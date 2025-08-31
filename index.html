@@ -27,7 +27,8 @@
   </head>
   <body>
     <!-- header section -->
-    <section>
+    <section id="header">
+      <!-- hero section -->
       <header
         class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
       >
@@ -36,7 +37,7 @@
           <h2 class="text-purple-950 font-extrabold">
             emmaNUEL akaLO <br />&lt;
             <span
-              class="transition duration-200 animate-pulse cursor-pointer hover:animate-none"
+              class="transition duration-400 animate-pulse cursor-pointer hover:animate-none"
               >nuelo</span
             >
             /&gt;
@@ -62,14 +63,14 @@
     <!-- main sections -->
     <section>
       <!-- navigation menu -->
-      <div class="bg-[#8213db]">
+      <div class="bg-[#8213db] sticky top-0 z-40">
         <nav
-          class="flex justify-between items-center p-10 max-w-[1400px] mx-auto relative z-40 text-white"
+          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-300"
         >
           <div>
             <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
           </div>
-          <!-- links -->
+          <!--desktop links -->
           <ul class="hidden md:flex gap-8">
             <li class="group">
               <a class="link" href="#about">About</a>
@@ -88,7 +89,9 @@
               <div class="link-underline"></div>
             </li>
             <li class="group">
-              <a class="link" href="./images/nuelo-resume.pdf" target="_blank">Resume</a>
+              <a class="link" href="./images/nuelo-resume.pdf" target="_blank"
+                >Resume</a
+              >
               <div class="link-underline"></div>
             </li>
           </ul>
@@ -99,19 +102,26 @@
             <div class="ham hamburger3"></div>
           </div>
 
-          <!-- todo hamburger menu -->
+          <!--  hamburger menu -->
           <div
             id="mobile-nav"
-            class="z-20 h-72 absolute right-0 top-16 bg-[#8213db] rounded-bl-[62px] hidden md:hidden"
+            class="z-20 h-72 absolute right-0 top-18 bg-[#8213db] rounded-bl-[62px] hidden md:hidden"
           >
+            <!-- mobile links -->
             <ul
-              class="flex flex-col h-full justify-center items-end pr-10 pl-24 gap-4 pt-12 text-white"
+              class="flex flex-col h-full justify-center items-end pr-10 pl-24 gap-4 pt-4 text-slate-300"
             >
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="./images/nuelo-resume.pdf">Resume</a></li>
+              <li><a href="#about" class="tracking-[0.1rem]">About</a></li>
+              <li><a href="#skills" class="tracking-[0.2rem]">Skills</a></li>
+              <li>
+                <a href="#projects" class="tracking-[0.05rem]">Projects</a>
+              </li>
+              <li><a href="#contact" class="tracking-[0.15rem]">Contact</a></li>
+              <li>
+                <a href="./images/nuelo-resume.pdf " class="tracking-[0.2rem]"
+                  >Resume</a
+                >
+              </li>
             </ul>
           </div>
         </nav>
@@ -120,7 +130,7 @@
       <!-- about section -->
       <section id="about">
         <div
-          class="flex flex-col justify-center items-center px-10 md:flex-row max-w-[1300px] mx-auto"
+          class="flex flex-col justify-center items-center mt-8 px-10 md:flex-row max-w-[1300px] mx-auto"
         >
           <!-- image -->
           <div
@@ -134,14 +144,18 @@
           </div>
 
           <!-- text -->
-          <div class="px-10 max-w-[750px] md:w-1/2 mx-auto">
+          <div class="px-2 max-w-[850px] md:px-8 md:w-1/2 mx-auto">
             <h4 class="section-title md:text-left">About</h4>
             <p class="text-justify md:text-xl lg:text-2xl">
               I’m a passionate
               <span class="emphasize">front-end web developer</span> skilled in
               crafting <span class="emphasize">responsive</span>, user-friendly
               web applications using React, TypeScript, JavaScript, and
-              TailwindCSS. With a foundation in HTML, CSS, and Git from my NYSC
+              TailwindCSS. 
+              <!-- hidden about -->
+        
+              <span id="hidden-about"  class="hidden">
+                With a foundation in HTML, CSS, and Git from my NYSC
               service at Colab (2024), I trained beginners in web development
               and explored Web3, began open source contributions through
               Onlydust to Starknet ecosystem. <br /><br />
@@ -159,6 +173,9 @@
               web experiences while growing in Web development. Check out my
               projects to see my work in action, and let’s connect to create
               something amazing!
+              </span>
+              
+              <button id="read-all-btn" class="cta-btn">Read More</button>
             </p>
           </div>
         </div>
