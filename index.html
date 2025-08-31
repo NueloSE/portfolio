@@ -22,6 +22,7 @@
       src="https://kit.fontawesome.com/71207c461d.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/script.js" defer></script>
     <title>nuelo portifolio</title>
   </head>
   <body>
@@ -43,8 +44,8 @@
           <h3 class="font-extralight text-purple-950">Web Developer</h3>
 
           <div class="flex flex-col md:flex-row gap-8">
-            <button class="btn btn-pry">Hire Me</button>
-            <button class="btn btn-sec">My Work</button>
+            <a href="#contact"><button class="btn btn-pry">Hire Me</button></a>
+            <a href="#projects"><button class="btn btn-sec">My Work</button></a>
           </div>
         </div>
 
@@ -61,13 +62,14 @@
     <!-- main sections -->
     <section>
       <!-- navigation menu -->
-      <div class="">
+      <div class="bg-[#8213db]">
         <nav
-          class="flex justify-between items-center p-10 max-w-[2600px] mx-auto"
+          class="flex justify-between items-center p-10 max-w-[1400px] mx-auto relative z-40 text-white"
         >
           <div>
             <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
           </div>
+          <!-- links -->
           <ul class="hidden md:flex gap-8">
             <li class="group">
               <a class="link" href="#about">About</a>
@@ -85,24 +87,38 @@
               <a class="link" href="#contact">Contact</a>
               <div class="link-underline"></div>
             </li>
-            <li>
-              <a
-                href="./images/nuelo-resume.pdf"
-                target="_blank"
-                class="cta-btn"
-                >Resume</a
-              >
+            <li class="group">
+              <a class="link" href="./images/nuelo-resume.pdf" target="_blank">Resume</a>
+              <div class="link-underline"></div>
             </li>
           </ul>
-
-          <!-- todo hamburger btn -->
+          <!-- hamburger btn -->
+          <div id="hamburger-btn" class="hamburger md:hidden">
+            <div class="ham hamburger1"></div>
+            <div class="ham hamburger2"></div>
+            <div class="ham hamburger3"></div>
+          </div>
 
           <!-- todo hamburger menu -->
+          <div
+            id="mobile-nav"
+            class="z-20 h-72 absolute right-0 top-16 bg-[#8213db] rounded-bl-[62px] hidden md:hidden"
+          >
+            <ul
+              class="flex flex-col h-full justify-center items-end pr-10 pl-24 gap-4 pt-12 text-white"
+            >
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="./images/nuelo-resume.pdf">Resume</a></li>
+            </ul>
+          </div>
         </nav>
       </div>
 
       <!-- about section -->
-      <section>
+      <section id="about">
         <div
           class="flex flex-col justify-center items-center px-10 md:flex-row max-w-[1300px] mx-auto"
         >
@@ -119,7 +135,7 @@
 
           <!-- text -->
           <div class="px-10 max-w-[750px] md:w-1/2 mx-auto">
-            <h4 id="about" class="section-title md:text-left">About</h4>
+            <h4 class="section-title md:text-left">About</h4>
             <p class="text-justify md:text-xl lg:text-2xl">
               I’m a passionate
               <span class="emphasize">front-end web developer</span> skilled in

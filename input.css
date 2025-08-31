@@ -60,7 +60,7 @@
   }
 
   .btn-sec {
-    @apply text-purple-100 bg-purple-900 border-0; 
+    @apply text-purple-100 bg-purple-900 border-0;
   }
 
   .cta-btn {
@@ -68,15 +68,51 @@
   }
 
   .link {
-    @apply hover:text-purple-900;
+      @apply hover:scale-110
   }
 
   .link-underline {
-    @apply border-t-2 border-purple-900 m-1 opacity-0 group-hover:opacity-100;
+    @apply border-t-2  m-1 opacity-0 group-hover:opacity-100;
   }
 
   .logo {
     @apply w-6 md:w-8;
+  }
+
+  /* hamburger */
+
+  .hamburger {
+    @apply w-8 h-6  relative cursor-pointer block;
+  }
+
+  .hamburger1,
+  .hamburger2,
+  .hamburger3 {
+    @apply w-8 h-1 bg-white absolute;
+  }
+
+  .hamburger1 {
+    @apply top-0;
+  }
+
+  .hamburger2 {
+    @apply top-2 w-5 right-0;
+  }
+
+  .hamburger3 {
+    @apply top-4;
+  }
+
+  .toggleMenu .hamburger1 {
+    @apply transition-all duration-150 rotate-45 -translate-x-1 translate-y-2
+  }
+
+  .toggleMenu .hamburger2 {
+    @apply hidden;
+  }
+
+  .toggleMenu .hamburger3 {
+    @apply transition-all duration-150 -rotate-45 -translate-x-1 -translate-y-2
   }
 
   .section-title {
@@ -96,7 +132,7 @@
   }
 
   .icon2 {
-    @apply text-2xl md:text-4xl !text-slate-500 hover:!text-purple-800 hover:scale-105
+    @apply text-2xl md:text-4xl !text-slate-500 hover:!text-purple-800 hover:scale-105;
   }
 
   input::placeholder {
