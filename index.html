@@ -42,7 +42,7 @@
             >
             /&gt;
           </h2>
-          <h3 class="font-extralight text-purple-950">Web Developer</h3>
+          <h3 class="font-normal text-purple-950">Web Developer</h3>
 
           <div class="flex flex-col md:flex-row gap-8">
             <a href="#contact"><button class="btn btn-pry">Hire Me</button></a>
@@ -221,7 +221,7 @@
               <div>
                 <!-- skill name & percentage -->
                 <div class="flex justify-between">
-                  <p class="">JavaScript / Tailwind</p>
+                  <p class="">JavaScript / Typescript</p>
                   <p class="font-extrabold">85%</p>
                 </div>
                 <!-- skill two bar -->
@@ -433,7 +433,7 @@
               ><img
                 src="./images/clipboard-app-screenshot.png"
                 alt=""
-                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
+                class="rounded-t-4xl h-[240px] w-full object-fill object-center"
             /></a>
 
             <div
@@ -484,7 +484,7 @@
               ><img
                 src="./images/gitexplorer-screenshot.png"
                 alt=""
-                class="rounded-t-4xl h-[240px] w-full object-cover object-bottom"
+                class="rounded-t-4xl h-[240px] w-full object-fill"
             /></a>
 
             <div
@@ -562,28 +562,60 @@
 
           <!-- form content -->
           <form
-            class="bg-cyan-50/40 bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4"
+            id="contact-form"
+            class="bg-cyan-50/40 dark:bg-black bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4"
           >
             <div>
               <label for="name">Your Name</label>
-              <input type="text" placeholder="Enter your name" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
             </div>
 
             <div>
               <label for="email">Email</label>
-              <input type="email" placeholder="Enter your email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
             </div>
 
             <div>
-              <label for="project">Subject</label>
-              <input type="text" placeholder="Enter Project Title" />
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Enter Project Title"
+                required
+              />
             </div>
 
             <div>
               <label for="message">Your Message</label>
-              <textarea name="message" id="message" rows="5"></textarea>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                required
+              ></textarea>
             </div>
-            <button class="cta-btn w-full py-3 hover:-translate-y-1.5">
+
+            <button
+              type="submit"
+              class="cta-btn w-full py-3 hover:-translate-y-1.5 relative"
+            >
+              <div
+                id="toast"
+                class="text-black px-16 tracking-widest py-2 rounded-full absolute -top-2 left-28 hidden"
+              ></div>
               Send Message
             </button>
           </form>

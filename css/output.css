@@ -6,6 +6,7 @@
     --font-sans: "Josefin Sans", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-lime-500: oklch(76.8% 0.233 130.85);
     --color-cyan-50: oklch(98.4% 0.019 200.873);
     --color-purple-100: oklch(94.6% 0.033 307.174);
     --color-purple-400: oklch(71.4% 0.203 305.504);
@@ -15,6 +16,7 @@
     --color-purple-800: oklch(43.8% 0.218 303.724);
     --color-purple-900: oklch(38.1% 0.176 304.987);
     --color-purple-950: oklch(29.1% 0.149 302.717);
+    --color-rose-500: oklch(64.5% 0.246 16.439);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-slate-500: oklch(55.4% 0.046 257.417);
@@ -43,10 +45,11 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
-    --font-weight-extralight: 200;
     --font-weight-light: 300;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-extrabold: 800;
+    --tracking-widest: 0.1em;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -222,62 +225,23 @@
   .sticky {
     position: sticky;
   }
+  .-top-2 {
+    top: calc(var(--spacing) * -2);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-2 {
-    top: calc(var(--spacing) * 2);
-  }
-  .top-18 {
-    top: calc(var(--spacing) * 18);
-  }
-  .top-20 {
-    top: calc(var(--spacing) * 20);
-  }
-  .top-22 {
-    top: calc(var(--spacing) * 22);
-  }
-  .top-24 {
-    top: calc(var(--spacing) * 24);
-  }
-  .top-\[9px\] {
-    top: 9px;
-  }
-  .top-\[86px\] {
-    top: 86px;
-  }
-  .top-\[87px\] {
-    top: 87px;
-  }
   .top-\[88px\] {
     top: 88px;
-  }
-  .top-\[89px\] {
-    top: 89px;
-  }
-  .top-\[90\] {
-    top: 90;
-  }
-  .top-\[90px\] {
-    top: 90px;
-  }
-  .top-\[92px\] {
-    top: 92px;
-  }
-  .top-\[93px\] {
-    top: 93px;
-  }
-  .top-\[94px\] {
-    top: 94px;
-  }
-  .top-\[px\] {
-    top: px;
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .left-28 {
+    left: calc(var(--spacing) * 28);
   }
   .z-20 {
     z-index: 20;
@@ -551,8 +515,11 @@
   .object-cover {
     object-fit: cover;
   }
-  .object-bottom {
-    object-position: bottom;
+  .object-fill {
+    object-fit: fill;
+  }
+  .object-center {
+    object-position: center;
   }
   .object-top {
     object-position: top;
@@ -574,6 +541,12 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
+  }
+  .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -616,9 +589,9 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
-  .font-extralight {
-    --tw-font-weight: var(--font-weight-extralight);
-    font-weight: var(--font-weight-extralight);
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .tracking-\[0\.1rem\] {
     --tw-tracking: 0.1rem;
@@ -635,6 +608,13 @@
   .tracking-\[0\.15rem\] {
     --tw-tracking: 0.15rem;
     letter-spacing: 0.15rem;
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-purple-400 {
     color: var(--color-purple-400);
@@ -778,6 +758,11 @@
     @media (width >= 976px) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .dark\:bg-black {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-black);
     }
   }
 }
@@ -1057,6 +1042,14 @@
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
+  }
+  .success-toast {
+    width: 400px;
+    background-color: var(--color-lime-500);
+  }
+  .fail-toast {
+    width: calc(var(--spacing) * 80);
+    background-color: var(--color-rose-500);
   }
   input::placeholder {
     font-size: var(--text-sm);
