@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="entire-page" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,11 +30,17 @@
     <section id="header">
       <!-- hero section -->
       <header
-        class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
+        class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] dark:bg-[url('/images/dark-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
       >
+        <img
+          id="theme-btn"
+          src="./images/dark-mode.svg"
+          alt=""
+          class="absolute top-12 right-8 md:top-28 md:right-16 cursor-pointer"
+        />
         <div class="flex flex-col justify-center items-center text-center px-4">
           <img src="" alt="" />
-          <h2 class="text-purple-950 font-extrabold">
+          <h2 class="text-purple-950 dark:text-purple-100 font-extrabold">
             emmaNUEL akaLO <br />&lt;
             <span
               class="transition duration-400 animate-pulse cursor-pointer hover:animate-none"
@@ -42,7 +48,9 @@
             >
             /&gt;
           </h2>
-          <h3 class="font-normal text-purple-950">Web Developer</h3>
+          <h3 class="font-normal text-purple-950 dark:text-purple-100">
+            Web Developer
+          </h3>
 
           <div class="flex flex-col md:flex-row gap-8">
             <a href="#contact"><button class="btn btn-pry">Hire Me</button></a>
@@ -61,17 +69,17 @@
     </section>
 
     <!-- main sections -->
-    <section>
+    <section class="dark:bg-slate-800 dark:text-slate-100">
       <!-- navigation menu -->
-      <div class="bg-slate-200 sticky top-0 z-40 border-b-2 border-purple-700">
+      <div class="bg-slate-100 dark:bg-slate-800 sticky top-0 z-40">
         <nav
-          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-700"
+          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-700 border-b"
         >
           <div>
             <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
           </div>
           <!--desktop links -->
-          <ul class="hidden md:flex gap-8">
+          <ul class="hidden md:flex gap-8 dark:text-slate-300">
             <li class="group">
               <a class="link" href="#about">About</a>
               <div class="link-underline"></div>
@@ -105,11 +113,11 @@
           <!--  hamburger menu -->
           <div
             id="mobile-nav"
-            class="z-20 h-72 absolute right-0 top-[88px] bg-slate-200 border-l-2 border-b-2 border-[#8213db] rounded-bl-[62px] hidden md:hidden"
+            class="z-20 h-72 absolute right-0 top-[88px] bg-slate-100 dark:bg-slate-800 border-l border-b border-slate-500 rounded-bl-[62px] md:hidden hidden"
           >
             <!-- mobile links -->
             <ul
-              class="flex flex-col h-full justify-center items-end pr-10 pl-16 gap-4 pt-4 text-slate-700"
+              class="flex flex-col h-full justify-center items-end pr-10 pl-16 gap-4 pt-4 text-slate-700 dark:text-slate-300"
             >
               <li><a href="#about" class="tracking-[0.1rem]">About</a></li>
               <li><a href="#skills" class="tracking-[0.2rem]">Skills</a></li>
@@ -184,14 +192,12 @@
       <!-- skills section -->
       <section id="skills">
         <h4 class="section-title">My Skills</h4>
-        <!-- skills container -->
+        <!-- skills containers -->
         <div
           class="flex flex-col justify-center items-center md:flex-row gap-8 md:gap-8"
         >
           <!-- container 1 -->
-          <div
-            class="hover:border-4 border-purple-500 shadow-2xl rounded-xl p-8 mx-16 md:mx-0 max-w-sm lg:max-w-[800px]"
-          >
+          <div class="skill-container">
             <!-- sub-skill title -->
             <div class="flex items-center gap-2">
               <img src="./images/coding-file.svg" alt="" class="w-6" />
@@ -250,9 +256,7 @@
           </div>
 
           <!-- container 2 -->
-          <div
-            class="hover:border-4 border-purple-500 shadow-2xl rounded-xl px-8 py-10 mx-16 max-w-sm lg:max-w-[800px] md:mx-0"
-          >
+          <div class="skill-container">
             <!-- sub-skill title -->
             <div class="flex items-center gap-2">
               <img src="./images/tools.svg" alt="" class="w-6" />
@@ -319,9 +323,7 @@
         <!-- projects catalogue -->
         <div class="grid md:grid-cols-2 gap-6 max-w-[1200px] mx-auto mt-6">
           <!-- project one -->
-          <div
-            class="w-full hover:border-4 border-[#fbcb21] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
-          >
+          <div class="border-[#fbcb21] project-container">
             <a href="https://moody-nine-chi.vercel.app/" target="_blank"
               ><img
                 src="./images/moody-screenshot.png"
@@ -372,14 +374,12 @@
           </div>
 
           <!-- project 2 -->
-          <div
-            class="w-full hover:border-4 border-purple-700 border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
-          >
+          <div class="border-purple-700 project-container">
             <a href="https://beamx-meme.vercel.app/" target="_blank"
               ><img
                 src="./images/beamx.png"
                 alt=""
-                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
+                class="rounded-t-4xl h-[240px] w-full object-full object-top"
             /></a>
 
             <div
@@ -424,9 +424,7 @@
           </div>
 
           <!-- project 3 -->
-          <div
-            class="w-full hover:border-4 border-[#21b9a2] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
-          >
+          <div class="border-[#21b9a2] project-container">
             <a
               href="https://clipboard-landing-page-xi-two.vercel.app/"
               target="_blank"
@@ -477,9 +475,7 @@
           </div>
 
           <!-- project 4 -->
-          <div
-            class="w-full hover:border-4 border-[#1a1a1a] border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6"
-          >
+          <div class="border-[#1a1a1a] project-container">
             <a href="https://gitprofile-explorer.vercel.app/" target="_blank"
               ><img
                 src="./images/gitexplorer-screenshot.png"
@@ -563,7 +559,7 @@
           <!-- form content -->
           <form
             id="contact-form"
-            class="bg-cyan-50/40 dark:bg-black bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4"
+            class="bg-cyan-50/40 dark:bg-slate-700/40 bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4 mb-16"
           >
             <div>
               <label for="name">Your Name</label>
@@ -624,7 +620,7 @@
     </section>
 
     <footer class="text-slate-500">
-      <div class="text-center px-4 mt-16 py-6 bg-slate-900">
+      <div class="text-center px-4 py-6 bg-slate-900">
         <div
           class="flex flex-col md:flex-row justify-between items-center max-w-3xl mx-auto"
         >

@@ -1,18 +1,36 @@
 "use strick";
 
+/* urls */
 const scriptUrl =
   "https://script.google.com/macros/s/AKfycbzMbNXrKgfEQExIjDUHP_uccgUqwvJI1CSDJz-hvcOR9lQU2csmW_VXQqRSX7zn3nAL/exec";
 
+/* html elements */
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const mobileNav = document.getElementById("mobile-nav");
 const readAllBtn = document.getElementById("read-all-btn");
 const hiddenAbout = document.getElementById("hidden-about");
 const contactForm = document.getElementById("contact-form");
 const toast = document.getElementById("toast");
+const themeBtn = document.getElementById("theme-btn");
+const htmlTag = document.getElementById("entire-page");
 
+/* variables */
+
+/* Event listener */
 hamburgerBtn.addEventListener("click", handleHam);
 readAllBtn.addEventListener("click", handleReadAll);
 contactForm.addEventListener("submit", handleSubmitForm);
+themeBtn.addEventListener("click", handleTheme);
+
+function handleTheme(e) {
+  htmlTag.classList.toggle("dark");
+
+  if (htmlTag.classList.contains("dark")) {
+    e.target.src = "../images/light-mode.svg";
+  } else {
+    e.target.src = "../images/dark-mode.svg";
+  }
+}
 
 function handleSubmitForm(e) {
   e.preventDefault();
@@ -21,7 +39,7 @@ function handleSubmitForm(e) {
     .then((response) => response.json())
     .then((data) => {
       if (data.result === "success") {
-        toast.classList.add('success-toast')
+        toast.classList.add("success-toast");
         toast.textContent = `Thank You! Your message has been sent.`;
         contactForm.reset();
       } else {
