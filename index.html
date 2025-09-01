@@ -32,12 +32,10 @@
       <header
         class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] dark:bg-[url('/images/dark-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
       >
-        <img
-          id="theme-btn"
-          src="./images/dark-mode.svg"
-          alt=""
-          class="absolute top-12 right-8 md:top-28 md:right-16 cursor-pointer"
-        />
+        <!-- theme button -->
+        <i
+          class="theme-btn fa-solid fa-lightbulb absolute top-28 right-8 md:right-16 cursor-pointer text-6xl"
+        ></i>
         <div class="flex flex-col justify-center items-center text-center px-4">
           <img src="" alt="" />
           <h2 class="text-purple-950 dark:text-purple-100 font-extrabold">
@@ -71,15 +69,18 @@
     <!-- main sections -->
     <section class="dark:bg-slate-800 dark:text-slate-100">
       <!-- navigation menu -->
-      <div class="bg-slate-100 dark:bg-slate-800 sticky top-0 z-40">
+      <div class="bg-slate-100 border-b dark:bg-slate-800 sticky top-0 z-40">
         <nav
-          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-700 border-b"
+          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-700"
         >
           <div>
             <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
           </div>
           <!--desktop links -->
           <ul class="hidden md:flex gap-8 dark:text-slate-300">
+            <i
+              class="theme-btn fa-solid fa-lightbulb cursor-pointer text-2xl"
+            ></i>
             <li class="group">
               <a class="link" href="#about">About</a>
               <div class="link-underline"></div>
@@ -119,6 +120,11 @@
             <ul
               class="flex flex-col h-full justify-center items-end pr-10 pl-16 gap-4 pt-4 text-slate-700 dark:text-slate-300"
             >
+              <li>
+                <i
+                  class="theme-btn fa-solid fa-lightbulb cursor-pointer text-2xl"
+                ></i>
+              </li>
               <li><a href="#about" class="tracking-[0.1rem]">About</a></li>
               <li><a href="#skills" class="tracking-[0.2rem]">Skills</a></li>
               <li>
@@ -192,15 +198,15 @@
       <!-- skills section -->
       <section id="skills">
         <h4 class="section-title">My Skills</h4>
-        <!-- skills containers -->
+        <!-- skills -->
         <div
           class="flex flex-col justify-center items-center md:flex-row gap-8 md:gap-8"
         >
-          <!-- container 1 -->
+          <!-- skill-container 1 -->
           <div class="skill-container">
             <!-- sub-skill title -->
             <div class="flex items-center gap-2">
-              <img src="./images/coding-file.svg" alt="" class="w-6" />
+              <i class="fa-solid fa-file-code icon text-2xl"></i>
               <h5 class="subtitle mt-1.5">Language & Frameworks</h5>
             </div>
             <p class="max-w-sm lg:max-w-lg pt-4">
@@ -217,9 +223,7 @@
                 </div>
                 <!-- skill one bar  -->
                 <div class="relative h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[80%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="w-[80%] skill-progress-bar"></div>
                 </div>
               </div>
 
@@ -232,9 +236,7 @@
                 </div>
                 <!-- skill two bar -->
                 <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[85%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="w-[85%] skill-progress-bar"></div>
                 </div>
               </div>
 
@@ -247,19 +249,17 @@
                 </div>
                 <!-- skill bar -->
                 <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[90%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="w-[90%] skill-progress-bar"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- container 2 -->
+          <!-- skill-container 2 -->
           <div class="skill-container">
             <!-- sub-skill title -->
             <div class="flex items-center gap-2">
-              <img src="./images/tools.svg" alt="" class="w-6" />
+              <i class="fa-solid fa-screwdriver-wrench icon text-2xl"></i>
               <h5 class="subtitle mt-1.5">Tools & Technologies</h5>
             </div>
             <p class="max-w-sm pt-4 lg:max-w-lg">
@@ -276,9 +276,7 @@
                 </div>
                 <!-- skill one bar  -->
                 <div class="relative h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[95%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="skill-progress-bar w-[95%]"></div>
                 </div>
               </div>
 
@@ -291,9 +289,7 @@
                 </div>
                 <!-- skill two bar -->
                 <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[80%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="w-[80%] skill-progress-bar"></div>
                 </div>
               </div>
 
@@ -306,9 +302,7 @@
                 </div>
                 <!-- skill bar -->
                 <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div
-                    class="absolute w-[90%] h-2 bg-purple-600 rounded-l-full"
-                  ></div>
+                  <div class="w-[90%] skill-progress-bar"></div>
                 </div>
               </div>
             </div>

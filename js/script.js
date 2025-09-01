@@ -11,8 +11,9 @@ const readAllBtn = document.getElementById("read-all-btn");
 const hiddenAbout = document.getElementById("hidden-about");
 const contactForm = document.getElementById("contact-form");
 const toast = document.getElementById("toast");
-const themeBtn = document.getElementById("theme-btn");
+const themeBtn = document.querySelectorAll(".theme-btn");
 const htmlTag = document.getElementById("entire-page");
+const body = document.getElementsByTagName("body");
 
 /* variables */
 
@@ -20,15 +21,22 @@ const htmlTag = document.getElementById("entire-page");
 hamburgerBtn.addEventListener("click", handleHam);
 readAllBtn.addEventListener("click", handleReadAll);
 contactForm.addEventListener("submit", handleSubmitForm);
-themeBtn.addEventListener("click", handleTheme);
+themeBtn.forEach(element => {
+  element.addEventListener("click", handleTheme);
+});
+
 
 function handleTheme(e) {
   htmlTag.classList.toggle("dark");
 
   if (htmlTag.classList.contains("dark")) {
-    e.target.src = "../images/light-mode.svg";
-  } else {
-    e.target.src = "../images/dark-mode.svg";
+    themeBtn.forEach(element => {
+      element.classList.add("light-theme");
+    }); 
+  }  else {
+    themeBtn.forEach(element => {
+      element.classList.remove("light-theme");
+    })
   }
 }
 
