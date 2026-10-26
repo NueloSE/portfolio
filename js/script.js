@@ -1,80 +1,113 @@
-"use strick";
+"use strict";
 
 /* urls */
 const scriptUrl =
   "https://script.google.com/macros/s/AKfycbzMbNXrKgfEQExIjDUHP_uccgUqwvJI1CSDJz-hvcOR9lQU2csmW_VXQqRSX7zn3nAL/exec";
 
 /* html elements */
+const htmlTag = document.documentElement;
+const siteHeader = document.getElementById("site-header");
 const hamburgerBtn = document.getElementById("hamburger-btn");
 const mobileNav = document.getElementById("mobile-nav");
-const readAllBtn = document.getElementById("read-all-btn");
-const hiddenAbout = document.getElementById("hidden-about");
-const contactForm = document.getElementById("contact-form");
-const toast = document.getElementById("toast");
+const mobileLinks = document.querySelectorAll(".mobile-link");
 const themeBtn = document.querySelectorAll(".theme-btn");
-const htmlTag = document.getElementById("entire-page");
-const body = document.getElementsByTagName("body");
-
-/* variables */
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const toast = document.getElementById("toast");
+const revealEls = document.querySelectorAll(".reveal");
 
 /* Event listener */
 hamburgerBtn.addEventListener("click", handleHam);
-readAllBtn.addEventListener("click", handleReadAll);
+mobileLinks.forEach((element) => element.addEventListener("click", closeMenu));
+themeBtn.forEach((element) => element.addEventListener("click", handleTheme));
 contactForm.addEventListener("submit", handleSubmitForm);
-themeBtn.forEach(element => {
-  element.addEventListener("click", handleTheme);
-});
+window.addEventListener("scroll", handleScroll, { passive: true });
 
+document.getElementById("year").textContent = new Date().getFullYear();
+handleScroll();
+setupReveal();
 
-function handleTheme(e) {
-  htmlTag.classList.toggle("dark");
+function handleTheme() {
+  const isDark = htmlTag.classList.toggle("dark");
+  try {
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  } catch (e) {}
+}
 
-  if (htmlTag.classList.contains("dark")) {
-    themeBtn.forEach(element => {
-      element.classList.add("light-theme");
-    }); 
-  }  else {
-    themeBtn.forEach(element => {
-      element.classList.remove("light-theme");
-    })
+function handleScroll() {
+  const scrolled = window.scrollY > 10;
+  siteHeader.classList.toggle("bg-white/80", scrolled);
+  siteHeader.classList.toggle("dark:bg-[#0b0a12]/80", scrolled);
+  siteHeader.classList.toggle("backdrop-blur", scrolled);
+  siteHeader.classList.toggle("border-slate-200", scrolled);
+  siteHeader.classList.toggle("dark:border-white/10", scrolled);
+}
+
+function handleHam() {
+  const isOpen = hamburgerBtn.classList.toggle("toggleMenu");
+  mobileNav.classList.toggle("hidden", !isOpen);
+  hamburgerBtn.setAttribute("aria-expanded", isOpen);
+}
+
+function closeMenu() {
+  hamburgerBtn.classList.remove("toggleMenu");
+  mobileNav.classList.add("hidden");
+  hamburgerBtn.setAttribute("aria-expanded", false);
+}
+
+function setupReveal() {
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach((element) => element.classList.add("is-visible"));
+    return;
   }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealEls.forEach((element) => observer.observe(element));
+}
+
+function showToast(message, type) {
+  toast.textContent = message;
+  toast.classList.remove("hidden", "success-toast", "fail-toast");
+  toast.classList.add(type);
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 5000);
 }
 
 function handleSubmitForm(e) {
   e.preventDefault();
 
+  const originalLabel = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending…";
+
   fetch(scriptUrl, { method: "POST", body: new FormData(contactForm) })
     .then((response) => response.json())
     .then((data) => {
       if (data.result === "success") {
-        toast.classList.add("success-toast");
-        toast.textContent = `Thank You! Your message has been sent.`;
+        showToast("Thank you! Your message has been sent.", "success-toast");
         contactForm.reset();
       } else {
-        toast.classList.add("fail-toast");
-        toast.textContent = `Error: ${data.error}`;
+        showToast(`Error: ${data.error}`, "fail-toast");
       }
-      toast.classList.remove("hidden");
-      setTimeout(() => {
-        toast.classList.add("hidden");
-      }, 3000);
     })
     .catch((error) => {
       console.error(error.message);
-      toast.textContent = `Error sending your message`;
+      showToast("Error sending your message. Please email me directly.", "fail-toast");
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalLabel;
     });
-}
-
-function handleReadAll() {
-  hiddenAbout.classList.toggle("hidden");
-  if (!hiddenAbout.classList.contains("hidden")) {
-    readAllBtn.textContent = "Show Less";
-  } else {
-    readAllBtn.textContent = "Read More";
-  }
-}
-
-function handleHam(e) {
-  hamburgerBtn.classList.toggle("toggleMenu");
-  mobileNav.classList.toggle("hidden");
 }

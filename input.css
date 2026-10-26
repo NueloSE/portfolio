@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @source "./*.html";
+@source "./js/*.js";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -8,94 +9,127 @@
   /* Custom breakpoints */
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 976px;
-  --breakpoint-xl: 1440px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 
   /* Custom font families */
-  --font-sans: "Josefin Sans", sans-serif;
-  --font-alata: "Alata", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Custom letter spacing */
-  --letter-spacing-widest: 0.3rem;
-
-  /* Custom colors */
-  --purple-base: #631bff;
+  /* Brand colors */
+  --color-brand-50: #f3efff;
+  --color-brand-100: #e7deff;
+  --color-brand-300: #b9a2ff;
+  --color-brand-400: #9a78ff;
+  --color-brand-500: #7c4dff;
+  --color-brand-600: #631bff;
+  --color-brand-700: #5312e0;
+  --color-brand-900: #2a0a75;
 }
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth scroll-pt-20 antialiased;
   }
 
-  a {
-    @apply font-alata  flex;
+  body {
+    @apply bg-white text-slate-700 font-sans dark:bg-[#0b0a12] dark:text-slate-300;
   }
 
-  h2 {
-    @apply text-white text-3xl md:text-5xl xl:text-6xl;
-  }
-
+  h1,
+  h2,
   h3 {
-    @apply uppercase text-white my-8 text-sm md:text-2xl;
+    @apply font-display text-slate-900 dark:text-white tracking-tight;
   }
 
-  input {
-    @apply focus:outline-0 block border border-slate-400 w-full rounded-full px-4 py-1 bg-white dark:bg-slate-300 text-black;
+  ::selection {
+    @apply bg-brand-600 text-white;
   }
 
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+
+  input,
   textarea {
-    @apply focus:outline-0 block border border-slate-400 w-full rounded-2xl px-4 py-1 bg-white dark:bg-slate-300;
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-slate-900 placeholder:text-slate-400 transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-white/10 dark:bg-white/5 dark:text-white;
   }
 
   label {
-    @apply font-light text-black dark:text-slate-200;
+    @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300;
   }
 }
 
 @layer components {
+  .container-x {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-20 md:py-28;
+  }
+
+  .eyebrow {
+    @apply font-mono text-sm text-brand-600 dark:text-brand-400;
+  }
+
+  .section-title {
+    @apply mt-2 text-3xl font-bold md:text-4xl;
+  }
+
+  .section-lead {
+    @apply mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400;
+  }
+
   .btn {
-    @apply border-2 border-white rounded-full px-12 text-sm md:text-xl py-3 font-semibold  font-alata tracking-[0.5rem] cursor-pointer hover:bg-black hover:text-white transition delay-150 hover:scale-105 hover:-translate-y-2 ease-in-out;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200 cursor-pointer;
   }
 
   .btn-pry {
-    @apply bg-white text-purple-900  hover:text-white hover:bg-purple-700;
+    @apply bg-brand-600 text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:-translate-y-0.5;
   }
 
   .btn-sec {
-    @apply text-purple-100 bg-purple-900 border-0 dark:bg-transparent dark:border-2;
+    @apply border border-slate-300 text-slate-800 hover:border-brand-500 hover:text-brand-600 dark:border-white/15 dark:text-slate-200 dark:hover:text-brand-300;
   }
 
-  .cta-btn {
-    @apply px-3 py-0.5 rounded-full bg-purple-700 dark:bg-purple-300 dark:text-black text-white text-[0.75rem] cursor-pointer;
+  .nav-link {
+    @apply text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-white;
   }
 
-  .link {
-    @apply hover:scale-110;
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-brand-600 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white cursor-pointer;
   }
 
-  .link-underline {
-    @apply border-t-2  m-1 opacity-0 group-hover:opacity-100;
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/[0.03];
   }
 
-  .logo {
-    @apply w-10 md:w-16;
+  .tag {
+    @apply rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-mono text-xs text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300;
   }
 
-  .light-theme {
-    /* @apply text-[#443868] */
-    @apply text-[#b136c4];
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/15 dark:text-brand-300;
+  }
+
+  .project-link {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-slate-800 transition hover:text-brand-600 dark:text-slate-200 dark:hover:text-brand-300;
+  }
+
+  .highlight {
+    @apply relative pl-5 text-sm text-slate-600 dark:text-slate-400 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-brand-500;
   }
 
   /* hamburger */
 
   .hamburger {
-    @apply w-8 h-6  relative cursor-pointer block;
+    @apply relative block h-5 w-6 cursor-pointer;
   }
 
-  .hamburger1,
-  .hamburger2,
-  .hamburger3 {
-    @apply w-8 h-1 bg-slate-700 dark:bg-slate-200 absolute rounded-full;
+  .ham {
+    @apply absolute left-0 h-0.5 w-6 rounded-full bg-slate-800 transition-all duration-200 dark:bg-slate-200;
   }
 
   .hamburger1 {
@@ -103,7 +137,7 @@
   }
 
   .hamburger2 {
-    @apply top-2 w-6 right-0;
+    @apply top-2 w-4;
   }
 
   .hamburger3 {
@@ -111,63 +145,47 @@
   }
 
   .toggleMenu .hamburger1 {
-    @apply transition-all duration-150 rotate-45 -translate-x-1 translate-y-2;
+    @apply top-2 rotate-45;
   }
 
   .toggleMenu .hamburger2 {
-    @apply hidden;
+    @apply opacity-0;
   }
 
   .toggleMenu .hamburger3 {
-    @apply transition-all duration-150 -rotate-45 -translate-x-1 -translate-y-2;
+    @apply top-2 -rotate-45;
   }
 
-  .section-title {
-    @apply text-purple-700 dark:text-purple-300 text-3xl font-sans font-extrabold text-center pt-12 pb-6;
-  }
-
-  .emphasize {
-    @apply font-extrabold text-purple-700 dark:text-purple-300;
-  }
-
-  .skill-container {
-    @apply hover:border-4 border-purple-500 dark:border-purple-300 shadow-2xl rounded-xl p-8 mx-16 md:mx-0 max-w-sm lg:max-w-[800px] dark:bg-slate-700/40;
-  }
-
-  .skill-progress-bar {
-    @apply absolute  h-2 bg-purple-600 rounded-l-full dark:bg-purple-400
-  }
-
-  .project-container {
-    @apply dark:bg-slate-700/40 w-full hover:border-4  border-b-12 shadow-2xl rounded-4xl mx-auto max-w-sm lg:max-w-[800px] space-y-6;
-  }
-
-  .subtitle {
-    @apply text-lg font-extrabold;
-  }
-
-  .icon {
-    @apply text-purple-700 dark:text-purple-300 pr-2;
-  }
-
-  .icon2 {
-    @apply text-2xl md:text-4xl !text-slate-500 hover:!text-purple-800 hover:scale-105;
-  }
+  /* toast */
 
   .success-toast {
-    @apply bg-lime-500 w-[400px];
+    @apply text-emerald-600 dark:text-emerald-400;
   }
 
   .fail-toast {
-    @apply bg-rose-500 w-80;
+    @apply text-rose-600 dark:text-rose-400;
   }
 
-  input::placeholder {
-    @apply text-slate-400 text-sm;
+  /* scroll reveal */
+
+  .reveal {
+    @apply translate-y-6 opacity-0 transition duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+  }
+
+  .reveal.is-visible {
+    @apply translate-y-0 opacity-100;
   }
 }
 
-.material-symbols-outlined {
-  @apply text-purple-700 dark:text-purple-300;
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
+/* macOS Monterey wallpaper: light & dark */
+.hero-bg {
+  background: url("../images/light-bg-tiny.jpg") center / cover no-repeat;
+}
+
+.dark .hero-bg {
+  background-image: url("../images/dark-bg-tiny.jpg");
+}
+
+.hero-icon {
+  @apply text-purple-950 hover:bg-white/50 dark:text-purple-100 dark:hover:bg-white/10;
 }

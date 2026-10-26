@@ -1,656 +1,686 @@
 <!DOCTYPE html>
-<html lang="en" id="entire-page" class="">
+<html lang="en" id="entire-page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/output.css" />
+    <title>Emmanuel Akalo · Full-stack Engineer</title>
+    <meta
+      name="description"
+      content="Emmanuel Akalo (nuelo), a full-stack engineer building AI agents and on-chain products with TypeScript, React, Next.js, Solidity and Rust."
+    />
+    <meta property="og:title" content="Emmanuel Akalo · Full-stack Engineer" />
+    <meta
+      property="og:description"
+      content="AI agents, privacy-preserving dApps and accessible web apps."
+    />
+    <meta property="og:image" content="./images/projects/hindsight.jpg" />
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+
+    <!-- apply saved / system theme before paint to avoid a flash -->
+    <script>
+      try {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark" || (!saved && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new"
-    />
+    <link rel="stylesheet" href="./css/output.css" />
 
     <script
       src="https://kit.fontawesome.com/71207c461d.js"
       crossorigin="anonymous"
     ></script>
     <script src="./js/script.js" defer></script>
-    <title>nuelo portifolio</title>
   </head>
   <body>
-    <!-- header section -->
-    <section id="header">
-      <!-- hero section -->
-      <header
-        class="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[url('/images/light-bg-tiny.jpg')] dark:bg-[url('/images/dark-bg-tiny.jpg')] bg-cover bg-center bg-no-repeat relative"
-      >
-        <!-- theme button -->
-        <i
-          class="theme-btn fa-solid fa-lightbulb absolute top-28 right-8 md:right-16 cursor-pointer text-6xl"
-        ></i>
-        <div class="flex flex-col justify-center items-center text-center px-4">
-          <img src="" alt="" />
-          <h2 class="text-purple-950 dark:text-purple-100 font-extrabold">
-            emmaNUEL akaLO <br />&lt;
-            <span
-              class="transition duration-400 animate-pulse cursor-pointer hover:animate-none"
-              >nuelo</span
-            >
-            /&gt;
-          </h2>
-          <h3 class="font-normal text-purple-950 dark:text-purple-100">
-            Web Developer
-          </h3>
+    <!-- navigation -->
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300"
+    >
+      <nav class="container-x flex h-16 items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+          <img src="./images/logo.png" alt="nuelo logo" class="h-9 w-9" />
+          <span class="font-display text-lg font-bold text-slate-900 dark:text-white">nuelo</span>
+        </a>
 
-          <div class="flex flex-col md:flex-row gap-8">
-            <a href="#contact"><button class="btn btn-pry">Hire Me</button></a>
-            <a href="#projects"><button class="btn btn-sec">My Work</button></a>
-          </div>
+        <!-- desktop links -->
+        <div class="hidden items-center gap-8 md:flex">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </div>
 
-        <div class="absolute bottom-0 pb-8">
-          <a href="#about">
-            <i
-              class="fa-solid fa-circle-arrow-down text-4xl md:text-6xl text-purple-400 transition duration-200 animate-bounce"
-            ></i>
-          </a>
-        </div>
-      </header>
-    </section>
-
-    <!-- main sections -->
-    <section class="dark:bg-slate-800 dark:text-slate-100">
-      <!-- navigation menu -->
-      <div class="bg-slate-100 border-b dark:bg-slate-800 sticky top-0 z-40">
-        <nav
-          class="flex justify-between items-center p-6 max-w-[1400px] mx-auto relative z-40 text-slate-700"
-        >
-          <div>
-            <a href="#"><img src="./images/logo.png" alt="" class="logo" /></a>
-          </div>
-          <!--desktop links -->
-          <ul class="hidden md:flex gap-8 dark:text-slate-300">
-            <i
-              class="theme-btn fa-solid fa-lightbulb cursor-pointer text-2xl"
-            ></i>
-            <li class="group">
-              <a class="link" href="#about">About</a>
-              <div class="link-underline"></div>
-            </li>
-            <li class="group">
-              <a class="link" href="#skills">Skills</a>
-              <div class="link-underline"></div>
-            </li>
-            <li class="group">
-              <a class="link" href="#projects">Projects</a>
-              <div class="link-underline"></div>
-            </li>
-            <li class="group">
-              <a class="link" href="#contact">Contact</a>
-              <div class="link-underline"></div>
-            </li>
-            <li class="group">
-              <a class="link" href="./images/nuelo-resume.pdf" target="_blank"
-                >Resume</a
-              >
-              <div class="link-underline"></div>
-            </li>
-          </ul>
-          <!-- hamburger btn -->
-          <div id="hamburger-btn" class="hamburger md:hidden">
-            <div class="ham hamburger1"></div>
-            <div class="ham hamburger2"></div>
-            <div class="ham hamburger3"></div>
-          </div>
-
-          <!--  hamburger menu -->
-          <div
-            id="mobile-nav"
-            class="z-20 h-72 absolute right-0 top-[88px] bg-slate-100 dark:bg-slate-800 border-l border-b border-slate-500 rounded-bl-[62px] md:hidden hidden"
+        <div class="flex items-center gap-2">
+          <button class="theme-btn icon-btn" aria-label="Toggle dark mode">
+            <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
+            <span class="hidden dark:inline"><i class="fa-solid fa-sun"></i></span>
+          </button>
+          <a
+            href="./images/nuelo-resume.pdf"
+            target="_blank"
+            class="btn btn-sec hidden px-4! py-2! md:inline-flex"
+            >Resume</a
           >
-            <!-- mobile links -->
-            <ul
-              class="flex flex-col h-full justify-center items-end pr-10 pl-16 gap-4 pt-4 text-slate-700 dark:text-slate-300"
-            >
-              <li>
-                <i
-                  class="theme-btn fa-solid fa-lightbulb cursor-pointer text-2xl"
-                ></i>
-              </li>
-              <li><a href="#about" class="tracking-[0.1rem]">About</a></li>
-              <li><a href="#skills" class="tracking-[0.2rem]">Skills</a></li>
-              <li>
-                <a href="#projects" class="tracking-[0.05rem]">Projects</a>
-              </li>
-              <li><a href="#contact" class="tracking-[0.15rem]">Contact</a></li>
-              <li>
-                <a href="./images/nuelo-resume.pdf " class="tracking-[0.2rem]"
-                  >Resume</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
+          <button
+            id="hamburger-btn"
+            class="hamburger ml-2 md:hidden"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <span class="ham hamburger1"></span>
+            <span class="ham hamburger2"></span>
+            <span class="ham hamburger3"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- mobile menu -->
+      <div
+        id="mobile-nav"
+        class="hidden border-b border-slate-200 bg-white/95 backdrop-blur md:hidden dark:border-white/10 dark:bg-[#0b0a12]/95"
+      >
+        <div class="container-x flex flex-col gap-1 py-4">
+          <a class="mobile-link nav-link py-2 text-base!" href="#about">About</a>
+          <a class="mobile-link nav-link py-2 text-base!" href="#projects">Projects</a>
+          <a class="mobile-link nav-link py-2 text-base!" href="#skills">Skills</a>
+          <a class="mobile-link nav-link py-2 text-base!" href="#experience">Experience</a>
+          <a class="mobile-link nav-link py-2 text-base!" href="#contact">Contact</a>
+          <a class="mobile-link nav-link py-2 text-base!" href="./images/nuelo-resume.pdf" target="_blank"
+            >Resume</a
+          >
+        </div>
       </div>
+    </header>
+
+    <main>
+      <!-- hero section -->
+      <section class="hero-bg relative flex min-h-screen items-center justify-center pt-24 pb-28">
+        <div class="container-x flex flex-col items-center text-center">
+          <span class="badge bg-white/70! backdrop-blur dark:bg-white/10!">
+            <span class="relative flex h-2 w-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            </span>
+            Open to new roles &amp; collaborations
+          </span>
+
+          <h1 class="mt-6 max-w-5xl text-4xl font-bold leading-[1.1] text-purple-950! sm:text-5xl md:text-6xl lg:text-7xl dark:text-white!">
+            Hi, I'm Emmanuel.<br />
+            I build <span class="text-brand-700 dark:text-brand-300">AI agents</span> and
+            <span class="text-brand-700 dark:text-brand-300">on-chain products</span> people can trust.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg text-purple-950/80 md:text-xl dark:text-purple-100/85">
+            Full-stack engineer working in TypeScript, React and Next.js, with smart contracts in
+            Solidity and Rust. I like problems where being correct matters more than being clever:
+            money, privacy and accessibility.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#projects" class="btn btn-pry">
+              View my work <i class="fa-solid fa-arrow-down text-xs"></i>
+            </a>
+            <a href="#contact" class="btn btn-sec border-purple-950/30! bg-white/60 text-purple-950! backdrop-blur dark:border-white/25! dark:bg-white/10 dark:text-white!">Get in touch</a>
+          </div>
+
+          <div class="mt-10 flex items-center gap-1">
+            <a href="https://github.com/NueloSE" target="_blank" rel="noopener" class="icon-btn hero-icon" aria-label="GitHub"
+              ><i class="fa-brands fa-github text-xl"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/emmanuel-akalo/"
+              target="_blank"
+              rel="noopener"
+              class="icon-btn hero-icon"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin text-xl"></i
+            ></a>
+            <a href="https://x.com/isNuelo" target="_blank" rel="noopener" class="icon-btn hero-icon" aria-label="X (Twitter)"
+              ><i class="fa-brands fa-x-twitter text-xl"></i
+            ></a>
+            <a href="mailto:nuelakalo@gmail.com" class="icon-btn hero-icon" aria-label="Email"
+              ><i class="fa-solid fa-envelope text-xl"></i
+            ></a>
+          </div>
+        </div>
+
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2" aria-label="Scroll to about">
+          <i class="fa-solid fa-circle-arrow-down animate-bounce text-4xl text-purple-400 md:text-5xl"></i>
+        </a>
+      </section>
 
       <!-- about section -->
-      <section id="about">
-        <div
-          class="flex flex-col justify-center items-center mt-8 px-10 md:flex-row max-w-[1300px] mx-auto"
-        >
-          <!-- image -->
-          <div
-            class="w-1/2 border-r-2 border-b-2 rounded-2xl rounded-bl-xl rounded-tr-lg border-purple-700"
-          >
-            <img
-              src="./images/about-photo.png"
-              alt=""
-              class="w-full max-h-[890px]"
-            />
+      <section id="about" class="section border-t border-slate-200 dark:border-white/10">
+        <div class="container-x grid items-center gap-12 md:grid-cols-5">
+          <div class="reveal md:col-span-2">
+            <div class="relative mx-auto max-w-xs md:max-w-none">
+              <div class="absolute -inset-3 rounded-3xl bg-linear-to-br from-brand-500/40 to-fuchsia-500/20 blur-2xl"></div>
+              <img
+                src="./images/about-photo.png"
+                alt="Portrait of Emmanuel Akalo"
+                class="relative w-full rounded-3xl border border-slate-200 object-cover dark:border-white/10"
+                loading="lazy"
+              />
+            </div>
           </div>
 
-          <!-- text -->
-          <div class="px-2 max-w-[850px] md:px-8 md:w-1/2 mx-auto">
-            <h4 class="section-title md:text-left">About</h4>
-            <p class="text-justify md:text-xl lg:text-2xl">
-              I’m a passionate
-              <span class="emphasize">front-end web developer</span> skilled in
-              crafting <span class="emphasize">responsive</span>, user-friendly
-              web applications using React, TypeScript, JavaScript, and
-              TailwindCSS.
-              <!-- hidden about -->
+          <div class="reveal md:col-span-3">
+            <p class="eyebrow">// about</p>
+            <h2 class="section-title">From teaching HTML to shipping agents</h2>
+            <div class="mt-6 space-y-4 text-lg leading-relaxed">
+              <p>
+                I started out teaching beginners HTML, CSS and Git during my NYSC year at Colab
+                Innovation Hub in Kaduna. That's also where I got pulled into Web3, writing my first
+                smart contracts in Solidity and Cairo with the Blockheader community.
+              </p>
+              <p>
+                Since then I've sharpened my frontend craft through the ALX Software Engineering
+                programme, contributed to open source across the Starknet and Stellar ecosystems, and
+                shipped a run of hackathon products: AI agents that pay each other, encrypted
+                order books, savings circles on Soroban, and a trading coach that proves its own accuracy.
+              </p>
+              <p>
+                I have a BSc in Statistics from the University of Ibadan, which shows up in how I
+                work: I'd rather measure something than guess.
+              </p>
+            </div>
 
-              <span id="hidden-about" class="hidden">
-                With a foundation in HTML, CSS, and Git from my NYSC service at
-                Colab (2024), I trained beginners in web development and
-                explored Web3, began open source contributions through Onlydust
-                to Starknet ecosystem. <br /><br />
-                Through the ALX Frontend Development Program (2025), I honed my
-                skills, creating a GitHub profile explorer and an ongoing voting
-                platform with Firebase. I thrive in
-                <span class="emphasize">collaborative</span>,
-                <span class="emphasize">fast-paced</span> environments,
-                leveraging <span class="emphasize">problem-solving</span> and
-                <span class="emphasize">mentoring</span> skills to deliver
-                impactful solutions. My goal is to build
-                <span class="emphasize">innovative</span>,
-                <span class="emphasize">optimized</span>,
-                <span class="emphasize">accessible</span>
-                web experiences while growing in Web development. Check out my
-                projects to see my work in action, and let’s connect to create
-                something amazing!
-              </span>
+            <dl class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              <div class="card p-4">
+                <dt class="text-xs uppercase tracking-wider text-slate-500">Based in</dt>
+                <dd class="mt-1 font-semibold text-slate-900 dark:text-white">Lagos, Nigeria</dd>
+              </div>
+              <div class="card p-4">
+                <dt class="text-xs uppercase tracking-wider text-slate-500">Focus</dt>
+                <dd class="mt-1 font-semibold text-slate-900 dark:text-white">AI × Web3</dd>
+              </div>
+              <div class="card col-span-2 p-4 sm:col-span-1">
+                <dt class="text-xs uppercase tracking-wider text-slate-500">Working</dt>
+                <dd class="mt-1 font-semibold text-slate-900 dark:text-white">Remote, any timezone</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
 
-              <button id="read-all-btn" class="cta-btn">Read More</button>
-            </p>
+      <!-- projects section -->
+      <section id="projects" class="section bg-slate-50 dark:bg-white/2">
+        <div class="container-x">
+          <p class="eyebrow">// selected work</p>
+          <h2 class="section-title">Featured projects</h2>
+          <p class="section-lead">
+            A few things I've designed and built end to end. Most are live, and all of them are open source.
+          </p>
+
+          <div class="mt-14 space-y-10">
+            <!-- project 1: hindsight -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <a href="https://hindsight-puce.vercel.app" target="_blank" rel="noopener" class="block overflow-hidden bg-slate-100 dark:bg-white/5">
+                <img
+                  src="./images/projects/hindsight.jpg"
+                  alt="Hindsight landing page"
+                  class="aspect-16/10 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </a>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">Bitget AI Base Camp Hackathon S2</span>
+                <h3 class="mt-4 text-2xl font-bold">Hindsight</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">An AI post-trade coach for tokenized US stocks</p>
+                <p class="mt-4">
+                  Replays every trade against real market data, finds the habits that cost the trader
+                  money, proves each one with their own trades, and turns them into rules that check the next one.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">Blind-tested on 200 held-out simulated traders: 99.7% precision, 0.2% false-alarm rate</li>
+                  <li class="highlight">"Code calculates, the AI explains". Every number comes from tested code, not the LLM</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">Next.js 16</span><span class="tag">TypeScript</span><span class="tag">Vercel AI SDK</span><span class="tag">Vitest</span><span class="tag">Tailwind</span>
+                </div>
+                <div class="mt-auto flex gap-6 pt-6">
+                  <a href="https://hindsight-puce.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live demo</a>
+                  <a href="https://github.com/NueloSE/hindsight" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- project 2: formwork -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <a href="https://formwork-omega.vercel.app" target="_blank" rel="noopener" class="block overflow-hidden bg-slate-100 lg:order-2 dark:bg-white/5">
+                <img
+                  src="./images/projects/formwork.jpg"
+                  alt="Formwork visa application form"
+                  class="aspect-16/10 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </a>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">WebMCP Challenge</span>
+                <h3 class="mt-4 text-2xl font-bold">Formwork</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">A visa application you and your AI agent fill in together</p>
+                <p class="mt-4">
+                  A 26-field form that works normally by hand, but also exposes safe tools to a
+                  browser agent through WebMCP. The agent can read your documents, fill fields visibly
+                  and flag doubts, but it can never submit.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">7 imperative tools plus 1 declarative tool, all sharing the same handlers the UI buttons use</li>
+                  <li class="highlight">Built for screen-reader and motor-impaired users, with no backend, keys or secrets</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">WebMCP</span><span class="tag">a11y</span>
+                </div>
+                <div class="mt-auto flex gap-6 pt-6">
+                  <a href="https://formwork-omega.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live demo</a>
+                  <a href="https://github.com/NueloSE/formwork" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- project 3: ajora -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <a href="https://ajora-ashy.vercel.app" target="_blank" rel="noopener" class="block overflow-hidden bg-slate-100 dark:bg-white/5">
+                <img
+                  src="./images/projects/ajora.jpg"
+                  alt="Ajora landing page"
+                  class="aspect-16/10 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </a>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">Stellar · Soroban</span>
+                <h3 class="mt-4 text-2xl font-bold">Ajora</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">Trustless rotating savings (ajo / esusu) on Stellar</p>
+                <p class="mt-4">
+                  Contribution societies fund small businesses across West Africa, until an organiser
+                  disappears with the pot. Ajora replaces the organiser with a smart contract that
+                  enforces contributions and pays out automatically.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">Seed-phrase-free onboarding with passkeys (Face ID / fingerprint), plus backup-device co-signers</li>
+                  <li class="highlight">ZK proofs make savings reputation portable and private</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">Rust</span><span class="tag">Soroban</span><span class="tag">Noir (ZK)</span><span class="tag">WebAuthn</span><span class="tag">TypeScript</span>
+                </div>
+                <div class="mt-auto flex gap-6 pt-6">
+                  <a href="https://ajora-ashy.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live demo</a>
+                  <a href="https://github.com/NueloSE/ajora" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- project 4: confidium -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <a href="https://confidium.vercel.app" target="_blank" rel="noopener" class="block overflow-hidden bg-slate-100 lg:order-2 dark:bg-white/5">
+                <img
+                  src="./images/projects/confidium.jpg"
+                  alt="Confidium landing page"
+                  class="aspect-16/10 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </a>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">Zama · Confidential tokens</span>
+                <h3 class="mt-4 text-2xl font-bold">Confidium</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">The home of confidential tokens</p>
+                <p class="mt-4">
+                  A production-grade dApp for the Zama Confidential Wrappers Registry. Browse every
+                  ERC-20 ↔ ERC-7984 pair, then wrap, send, decrypt and unwrap any confidential
+                  token, with amounts encrypted end to end.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">Turborepo monorepo with a framework-agnostic <code class="font-mono text-xs">@confidium/core</code> registry SDK</li>
+                  <li class="highlight">Embeddable widget and developer pages, full on Sepolia and read-only on Ethereum</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">wagmi</span><span class="tag">viem</span><span class="tag">Turborepo</span><span class="tag">FHE</span>
+                </div>
+                <div class="mt-auto flex flex-wrap gap-6 pt-6">
+                  <a href="https://confidium.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live demo</a>
+                  <a href="https://youtu.be/Lc42b_OtHhw" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-youtube"></i>Video</a>
+                  <a href="https://github.com/NueloSE/confidium" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- project 5: cipherbook -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <a href="https://cipherbook-red.vercel.app" target="_blank" rel="noopener" class="block overflow-hidden bg-slate-100 dark:bg-white/5">
+                <img
+                  src="./images/projects/cipherbook.jpg"
+                  alt="CipherBook landing page"
+                  class="aspect-16/10 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </a>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">Zama Developer Program S2</span>
+                <h3 class="mt-4 text-2xl font-bold">CipherBook</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">A fully encrypted limit-order-book DEX</p>
+                <p class="mt-4">
+                  Every order price is encrypted with Fully Homomorphic Encryption and matched on-chain
+                  without ever being revealed, so front-running and MEV are cryptographically impossible.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">Encrypted price comparison and branching (<code class="font-mono text-xs">FHE.ge</code>, <code class="font-mono text-xs">FHE.select</code>) in batch matching</li>
+                  <li class="highlight">27 passing contract tests, deployed on Ethereum Sepolia</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">Solidity</span><span class="tag">fhEVM</span><span class="tag">Hardhat</span><span class="tag">React</span><span class="tag">TypeScript</span>
+                </div>
+                <div class="mt-auto flex gap-6 pt-6">
+                  <a href="https://cipherbook-red.vercel.app" target="_blank" rel="noopener" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live demo</a>
+                  <a href="https://github.com/NueloSE/cipherbook" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- project 6: open doors -->
+            <article class="reveal card group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+              <div class="flex min-w-0 items-center bg-[#0d0b16] p-5 lg:order-2 md:p-8">
+                <div class="w-full overflow-hidden rounded-xl border border-white/10 bg-black/40 font-mono text-[11px] leading-relaxed text-slate-300 sm:text-xs">
+                  <div class="flex gap-1.5 border-b border-white/10 px-4 py-3">
+                    <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
+                    <span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
+                    <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
+                  </div>
+                  <div class="space-y-1 overflow-x-auto p-4">
+                    <p><span class="text-brand-400">$</span> npx open-doors --demo</p>
+                    <p class="pt-2 text-white">3 open doors · <span class="text-amber-300">$41.00 reachable</span></p>
+                    <p class="text-slate-400">Worst: unlimited USDT to Binance Wallet</p>
+                    <p class="whitespace-pre pt-2 text-slate-500">TIER    REACHABLE  TOKEN  WHY</p>
+                    <p class="whitespace-pre"><span class="text-rose-400">HIGH  </span>  $40.00     USDT   unlimited · never expires</p>
+                    <p class="whitespace-pre"><span class="text-amber-300">REVIEW</span>   $0.50     USDC   unlimited · never expires</p>
+                    <p class="whitespace-pre"><span class="text-amber-300">REVIEW</span>   $0.50     U      unlimited · never expires</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col p-6 md:p-8">
+                <span class="badge w-fit">Binance Agent OS · npm package</span>
+                <h3 class="mt-4 text-2xl font-bold">Open Doors</h3>
+                <p class="mt-1 font-medium text-brand-600 dark:text-brand-400">See what can spend your tokens, then close it</p>
+                <p class="mt-4">
+                  An AI agent skill and CLI that audits standing ERC-20 approvals on a Binance Agentic
+                  Wallet and ranks them by how much money each spender can actually reach, not by how
+                  alarming they look.
+                </p>
+                <ul class="mt-4 space-y-2">
+                  <li class="highlight">Published to npm and installable as an agent skill. The CLI is the engine, the conversation is the interface</li>
+                  <li class="highlight">Read-only scanning by default, plus a 30-second demo that needs no wallet or keys</li>
+                </ul>
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">CLI</span><span class="tag">Agent skills</span><span class="tag">BSC</span>
+                </div>
+                <div class="mt-auto flex gap-6 pt-6">
+                  <a href="https://www.npmjs.com/package/open-doors" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-npm"></i>npm</a>
+                  <a href="https://github.com/NueloSE/open-doors" target="_blank" rel="noopener" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- more projects -->
+          <h3 class="mt-24 text-2xl font-bold">More things I've built</h3>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="https://github.com/NueloSE/haggle" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-gavel text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">Haggle</h4>
+              <p class="mt-2 flex-1 text-sm">A procurement agent with a wallet. It runs sealed-bid auctions across AI agents, escrows USDC on Base and returns an on-chain receipt.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">TypeScript · Base · CROO</p>
+            </a>
+            <a href="https://stub-nuelos-projects.vercel.app" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-ticket text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">Stub</h4>
+              <p class="mt-2 flex-1 text-sm">A no-loss prize pool on Zama. Anyone can verify the draw, but only you can read your balance, odds and result.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">Solidity · FHE · Next.js</p>
+            </a>
+            <a href="https://brandforge-kappa.vercel.app" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-palette text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">BrandForge</h4>
+              <p class="mt-2 flex-1 text-sm">One sentence in, a complete brand out: logo, WCAG-validated palette, design tokens and a live site. Pay per call via x402.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">TypeScript · AI · x402</p>
+            </a>
+            <a href="https://vanton.vercel.app" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-store text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">Vanton</h4>
+              <p class="mt-2 flex-1 text-sm">An agent-payment marketplace on Canton. Agents discover services and pay per call, with spending limits enforced by the ledger.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">TypeScript · Canton · x402</p>
+            </a>
+            <a href="https://aria-agent-orpin.vercel.app" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-chart-line text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">ARIA</h4>
+              <p class="mt-2 flex-1 text-sm">A regime-aware autonomous trading agent for BNB Chain. It reads the market regime first, then picks the strategy, and treats not trading as a position.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">Python · Claude · BNB Chain</p>
+            </a>
+            <a href="https://cardentic.vercel.app" target="_blank" rel="noopener" class="reveal card group flex flex-col p-6 transition hover:-translate-y-1 hover:border-brand-500/50">
+              <div class="flex items-center justify-between">
+                <i class="fa-solid fa-robot text-2xl text-brand-600 dark:text-brand-400"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-400 transition group-hover:text-brand-500"></i>
+              </div>
+              <h4 class="mt-4 font-display text-lg font-bold text-slate-900 dark:text-white">Cardentic</h4>
+              <p class="mt-2 flex-1 text-sm">One card payment funds a swarm of AI agents that coordinate and pay each other in USDC micropayments over x402 on Stellar.</p>
+              <p class="mt-4 font-mono text-xs text-slate-500">TypeScript · Stellar · x402</p>
+            </a>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a href="https://github.com/NueloSE?tab=repositories" target="_blank" rel="noopener" class="btn btn-sec">
+              <i class="fa-brands fa-github"></i> See everything on GitHub
+            </a>
           </div>
         </div>
       </section>
 
       <!-- skills section -->
-      <section id="skills">
-        <h4 class="section-title">My Skills</h4>
-        <!-- skills -->
-        <div
-          class="flex flex-col justify-center items-center md:flex-row gap-8 md:gap-8"
-        >
-          <!-- skill-container 1 -->
-          <div class="skill-container">
-            <!-- sub-skill title -->
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-file-code icon text-2xl"></i>
-              <h5 class="subtitle mt-1.5">Language & Frameworks</h5>
-            </div>
-            <p class="max-w-sm lg:max-w-lg pt-4">
-              Creating responsive, intuitive and optimized user interfaces with
-              modern frameworks and best practices.
-            </p>
-            <div class="mt-6 space-y-6">
-              <!-- skill one -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">React</p>
-                  <p class="font-extrabold">80%</p>
-                </div>
-                <!-- skill one bar  -->
-                <div class="relative h-2 bg-gray-200 rounded-full">
-                  <div class="w-[80%] skill-progress-bar"></div>
-                </div>
-              </div>
+      <section id="skills" class="section">
+        <div class="container-x">
+          <p class="eyebrow">// toolkit</p>
+          <h2 class="section-title">Skills &amp; technologies</h2>
+          <p class="section-lead">The tools I reach for, grouped by where they sit in the stack.</p>
 
-              <!-- skill bar -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">JavaScript / Typescript</p>
-                  <p class="font-extrabold">85%</p>
-                </div>
-                <!-- skill two bar -->
-                <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div class="w-[85%] skill-progress-bar"></div>
-                </div>
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <div class="reveal card p-6 md:p-8">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-code text-xl text-brand-600 dark:text-brand-400"></i>
+                <h3 class="text-lg font-bold">Languages</h3>
               </div>
-
-              <!-- skill three -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">CSS / Tailwind</p>
-                  <p class="font-extrabold">95%</p>
-                </div>
-                <!-- skill bar -->
-                <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div class="w-[90%] skill-progress-bar"></div>
-                </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Solidity</span><span class="tag">Rust</span><span class="tag">Python</span><span class="tag">HTML</span><span class="tag">CSS</span>
               </div>
             </div>
-          </div>
-
-          <!-- skill-container 2 -->
-          <div class="skill-container">
-            <!-- sub-skill title -->
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-screwdriver-wrench icon text-2xl"></i>
-              <h5 class="subtitle mt-1.5">Tools & Technologies</h5>
+            <div class="reveal card p-6 md:p-8">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-layer-group text-xl text-brand-600 dark:text-brand-400"></i>
+                <h3 class="text-lg font-bold">Frontend</h3>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">TanStack Query</span><span class="tag">Accessibility</span>
+              </div>
             </div>
-            <p class="max-w-sm pt-4 lg:max-w-lg">
-              Utilizing modern development tools and practices for efficient
-              workflow.
-            </p>
-            <div class="mt-6 space-y-6">
-              <!-- skill one -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">Git & GitHub</p>
-                  <p class="font-extrabold">95%</p>
-                </div>
-                <!-- skill one bar  -->
-                <div class="relative h-2 bg-gray-200 rounded-full">
-                  <div class="skill-progress-bar w-[95%]"></div>
-                </div>
+            <div class="reveal card p-6 md:p-8">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-brain text-xl text-brand-600 dark:text-brand-400"></i>
+                <h3 class="text-lg font-bold">Backend &amp; AI</h3>
               </div>
-
-              <!-- skill bar -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">CI / CD</p>
-                  <p class="font-extrabold">80%</p>
-                </div>
-                <!-- skill two bar -->
-                <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div class="w-[80%] skill-progress-bar"></div>
-                </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">REST APIs</span><span class="tag">Vercel AI SDK</span><span class="tag">Claude / OpenAI</span><span class="tag">MCP &amp; WebMCP</span><span class="tag">Agent skills</span>
               </div>
-
-              <!-- skill three -->
-              <div>
-                <!-- skill name & percentage -->
-                <div class="flex justify-between">
-                  <p class="">Firebase & Vercel</p>
-                  <p class="font-extrabold">90%</p>
-                </div>
-                <!-- skill bar -->
-                <div class="relative w-full h-2 bg-gray-200 rounded-full">
-                  <div class="w-[90%] skill-progress-bar"></div>
-                </div>
+            </div>
+            <div class="reveal card p-6 md:p-8">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-cube text-xl text-brand-600 dark:text-brand-400"></i>
+                <h3 class="text-lg font-bold">Web3</h3>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag">Soroban / Stellar</span><span class="tag">Zama fhEVM</span><span class="tag">EVM / Base / BSC</span><span class="tag">wagmi · viem</span><span class="tag">Hardhat</span><span class="tag">x402</span><span class="tag">ZK (Noir)</span>
+              </div>
+            </div>
+            <div class="reveal card p-6 md:col-span-2 md:p-8">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-screwdriver-wrench text-xl text-brand-600 dark:text-brand-400"></i>
+                <h3 class="text-lg font-bold">Tooling &amp; practice</h3>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tag">Git &amp; GitHub</span><span class="tag">CI/CD</span><span class="tag">Vitest / Jest</span><span class="tag">Turborepo · pnpm</span><span class="tag">Docker</span><span class="tag">Vercel</span><span class="tag">Firebase</span><span class="tag">Figma</span><span class="tag">Technical writing</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- My projects section-->
-      <section id="projects" class="my-16">
-        <h4 class="section-title">Selected Projects</h4>
+      <!-- experience section -->
+      <section id="experience" class="section bg-slate-50 dark:bg-white/2">
+        <div class="container-x">
+          <p class="eyebrow">// journey</p>
+          <h2 class="section-title">Experience</h2>
 
-        <!-- projects catalogue -->
-        <div class="grid md:grid-cols-2 gap-6 max-w-[1200px] mx-auto mt-6">
-          <!-- project one -->
-          <div class="border-[#fbcb21] project-container">
-            <a href="https://moody-nine-chi.vercel.app/" target="_blank"
-              ><img
-                src="./images/moody-screenshot.png"
-                alt=""
-                class="rounded-t-4xl h-[240px] w-full object-cover object-top"
-            /></a>
-
-            <div
-              class="flex flex-col justify-between px-8 text-center md:text-left"
-            >
-              <h5 class="subtitle mt-1.5">Moody Application</h5>
-
-              <p class="min-h-[150px] max-w-sm lg:max-w-lg py-4 text-justify">
-                A web app built with Firebase for user authentication and data
-                storage, enabling users to sign in and log their daily moods
-                with optional emoji support. Features include filtering recorded
-                moods by day, week, month, or all entries. Each user's data is
-                securely stored and personalized, offering an intuitive way to
-                track emotional well-being over time.
+          <ol class="mt-12 space-y-10 border-l border-slate-200 pl-8 dark:border-white/10">
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-brand-600 ring-4 ring-brand-100 dark:ring-brand-900"></span>
+              <p class="font-mono text-sm text-slate-500">Jun 2026 to present</p>
+              <h3 class="mt-1 text-lg font-bold">Junior AI Software Engineer Intern · TalentNation</h3>
+              <p class="mt-2 max-w-2xl">
+                Working through engineering tasks and Python implementation work: breaking down
+                requirements, investigating errors and explaining technical decisions clearly.
               </p>
-
-              <div>
-                <ul class="flex justify-between pb-4">
-                  <li class="group">
-                    <a
-                      href="https://moody-nine-chi.vercel.app/"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >View Project<span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group">
-                    <a
-                      href="https://github.com/NueloSE/fe-mentors/tree/main/moody"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >Code
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- project 2 -->
-          <div class="border-purple-700 project-container">
-            <a href="https://beamx-meme.vercel.app/" target="_blank"
-              ><img
-                src="./images/beamx.png"
-                alt=""
-                class="rounded-t-4xl h-[240px] w-full object-full object-top"
-            /></a>
-
-            <div
-              class="flex flex-col justify-between px-8 text-center md:text-left"
-            >
-              <h5 class="subtitle mt-1.5">BeamX Dapp</h5>
-
-              <p class="max-w-sm lg:max-w-lg py-4 text-justify min-h-[180px]">
-                A user-friendly web app, enabling easy memecoin creation on
-                StarkNet’s Ekubo Protocol using natural language prompts.
-                Features include one-click token deployment, automatic parameter
-                extraction (name, symbol, supply, decimals), and instant
-                StarkScan verification links. No blockchain expertise needed.
+            </li>
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-brand-600 ring-4 ring-brand-100 dark:ring-brand-900"></span>
+              <p class="font-mono text-sm text-slate-500">Jan 2026 to Jun 2026</p>
+              <h3 class="mt-1 text-lg font-bold">Open-Source Contributor · Stellar ecosystem (Drips)</h3>
+              <p class="mt-2 max-w-2xl">
+                Contributed features, fixes and tests to open-source Stellar projects, spanning Soroban
+                (Rust) smart contracts and TypeScript frontends.
               </p>
-
-              <div>
-                <ul class="flex justify-between pb-4">
-                  <li class="group">
-                    <a
-                      href="https://beamx-meme.vercel.app/"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >View Project<span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group">
-                    <a
-                      href="https://github.com/NueloSE/beamx"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >Code
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- project 3 -->
-          <div class="border-[#21b9a2] project-container">
-            <a
-              href="https://clipboard-landing-page-xi-two.vercel.app/"
-              target="_blank"
-              ><img
-                src="./images/clipboard-app-screenshot.png"
-                alt=""
-                class="rounded-t-4xl h-[240px] w-full object-fill object-center"
-            /></a>
-
-            <div
-              class="flex flex-col justify-between px-8 text-center md:text-left"
-            >
-              <h5 class="subtitle mt-1.5">Clipboard Landing Page</h5>
-
-              <p class="min-h-[180px] max-w-sm lg:max-w-lg py-4 text-justify">
-                A responsive HTML and Tailwind CSS project showcasing UI design
-                skills. Features a hero section, feature highlights, and footer
-                with hover states and curved borders for visual appeal, built to
-                match provided mockups pixel-perfectly.
+            </li>
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-brand-600 ring-4 ring-brand-100 dark:ring-brand-900"></span>
+              <p class="font-mono text-sm text-slate-500">Feb 2024 to Feb 2025</p>
+              <h3 class="mt-1 text-lg font-bold">Open-Source Contributor · Starknet ecosystem / OnlyDust</h3>
+              <p class="mt-2 max-w-2xl">
+                Co-built BeamX in a three-person hackathon team: an AI agent that creates tokens from
+                plain-language prompts. Worked on smart-contract development, testing and documentation.
               </p>
-
-              <div>
-                <ul class="flex justify-between pb-4">
-                  <li class="group">
-                    <a
-                      href="https://clipboard-landing-page-xi-two.vercel.app/"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >View Project<span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group">
-                    <a
-                      href="https://github.com/NueloSE/tailwind-projects/tree/main/clipboard"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >Code
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- project 4 -->
-          <div class="border-[#1a1a1a] project-container">
-            <a href="https://gitprofile-explorer.vercel.app/" target="_blank"
-              ><img
-                src="./images/gitexplorer-screenshot.png"
-                alt=""
-                class="rounded-t-4xl h-[240px] w-full object-fill"
-            /></a>
-
-            <div
-              class="flex flex-col justify-between px-8 text-center md:text-left"
-            >
-              <h5 class="subtitle mt-1.5">Gitprofile Explorer</h5>
-
-              <p class="min-h-[180px] max-w-sm lg:max-w-lg py-4 text-justify">
-                A React-based web app using the GitHub API to search for user
-                profiles by username, location, or repository count. Features
-                include basic and advanced search, error handling, and a clean
-                design, developed as part of the ALX Front-End ReactJS track.
+            </li>
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-brand-600 ring-4 ring-brand-100 dark:ring-brand-900"></span>
+              <p class="font-mono text-sm text-slate-500">Jan 2025 to Aug 2025</p>
+              <h3 class="mt-1 text-lg font-bold">ALX Software Engineering · ALX Africa</h3>
+              <p class="mt-2 max-w-2xl">Intensive frontend training in React, TypeScript, Firebase and Tailwind CSS, built through collaborative peer projects.</p>
+            </li>
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-brand-600 ring-4 ring-brand-100 dark:ring-brand-900"></span>
+              <p class="font-mono text-sm text-slate-500">Aug 2023 to Aug 2024</p>
+              <h3 class="mt-1 text-lg font-bold">Web Development Trainer (NYSC) · Colab Innovation Hub, Kaduna</h3>
+              <p class="mt-2 max-w-2xl">
+                Taught beginners HTML, CSS, JavaScript and Git in hands-on sessions. Built and tested
+                smart contracts and a prototype dApp in Solidity and Cairo with the Blockheader Web3 community.
               </p>
-
-              <div>
-                <ul class="flex justify-between pb-4">
-                  <li class="group">
-                    <a
-                      href="https://gitprofile-explorer.vercel.app/"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >View Project<span class="material-symbols-outlined">
-                        open_in_new
-                      </span>
-                    </a>
-                  </li>
-                  <li class="group">
-                    <a
-                      href="https://github.com/NueloSE/alx-fe-reactjs/tree/main/github-user-search"
-                      target="_blank"
-                      class="group-hover:scale-105 duration-125"
-                      >Code
-                      <span class="material-symbols-outlined">
-                        open_in_new
-                      </span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            </li>
+            <li class="reveal relative">
+              <span class="absolute -left-9.25 top-1.5 h-3 w-3 rounded-full bg-slate-400 ring-4 ring-slate-200 dark:ring-white/10"></span>
+              <p class="font-mono text-sm text-slate-500">2019 to 2023</p>
+              <h3 class="mt-1 text-lg font-bold">BSc Statistics · University of Ibadan</h3>
+            </li>
+          </ol>
         </div>
       </section>
 
       <!-- contact section -->
-      <section id="contact">
-        <h4 class="section-title">Get In Touch</h4>
-
-        <div
-          class="flex flex-col gap-4 md:items-center md:flex-row max-w-[1300px] mx-auto px-8"
-        >
-          <!-- text content -->
-          <div class="w-fit mx-auto text-center md:text-left">
-            <h5 class="subtitle mt-1.5">Let's talk about your project</h5>
-            <p class="max-w-sm lg:max-w-lg py-4 text-justify">
-              Interested in working together? Fill out the form and I'll get
-              back to you as soon as possible. Let's create something amazing
-              together!
+      <section id="contact" class="section">
+        <div class="container-x grid gap-12 md:grid-cols-2">
+          <div class="reveal">
+            <p class="eyebrow">// contact</p>
+            <h2 class="section-title">Let's build something</h2>
+            <p class="section-lead">
+              Hiring, have a project in mind, or want a teammate for the next hackathon? Send a
+              message and I'll get back to you soon.
             </p>
-            <ul>
+            <ul class="mt-8 space-y-4">
               <li>
-                <span class="fa-solid fa-envelope icon"></span
-                >nuelakalo@gmail.com
-              </li>
-
-              <li>
-                <span class="fa-solid fa-phone icon"></span>(+234)816-168-5012
+                <a href="mailto:nuelakalo@gmail.com" class="flex items-center gap-3 hover:text-brand-600 dark:hover:text-brand-300">
+                  <span class="icon-btn bg-brand-50 text-brand-600! dark:bg-brand-500/15 dark:text-brand-300!"><i class="fa-solid fa-envelope"></i></span>
+                  nuelakalo@gmail.com
+                </a>
               </li>
               <li>
-                <span class="fa-solid fa-location-dot icon"></span>Kaduna,
-                Nigeria
+                <a href="tel:+2348161685012" class="flex items-center gap-3 hover:text-brand-600 dark:hover:text-brand-300">
+                  <span class="icon-btn bg-brand-50 text-brand-600! dark:bg-brand-500/15 dark:text-brand-300!"><i class="fa-solid fa-phone"></i></span>
+                  (+234) 816-168-5012
+                </a>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="icon-btn bg-brand-50 text-brand-600! dark:bg-brand-500/15 dark:text-brand-300!"><i class="fa-solid fa-location-dot"></i></span>
+                Lagos, Nigeria
               </li>
             </ul>
           </div>
 
           <!-- form content -->
-          <form
-            id="contact-form"
-            class="bg-cyan-50/40 dark:bg-slate-700/40 bg-opacity shadow-2xl rounded-xl p-8 mx-auto w-full md:w-1/2 space-y-4 mb-16"
-          >
-            <div>
-              <label for="name">Your Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-              />
+          <form id="contact-form" class="reveal card space-y-5 p-6 shadow-xl shadow-slate-200/50 md:p-8 dark:shadow-none">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email" required />
+              </div>
             </div>
-
-            <div>
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
             <div>
               <label for="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Enter Project Title"
-                required
-              />
+              <input type="text" id="subject" name="subject" placeholder="What's it about?" required />
             </div>
-
             <div>
-              <label for="message">Your Message</label>
-              <textarea
-                name="message"
-                id="message"
-                rows="5"
-                required
-              ></textarea>
+              <label for="message">Message</label>
+              <textarea name="message" id="message" rows="5" placeholder="Tell me a bit about it…" required></textarea>
             </div>
-
-            <button
-              type="submit"
-              class="cta-btn w-full py-3 hover:-translate-y-1.5 relative"
-            >
-              <div
-                id="toast"
-                class="text-black px-16 tracking-widest py-2 rounded-full absolute -top-2 left-28 hidden"
-              ></div>
-              Send Message
+            <button id="submit-btn" type="submit" class="btn btn-pry w-full">
+              Send message <i class="fa-solid fa-paper-plane text-xs"></i>
             </button>
+            <p id="toast" role="status" aria-live="polite" class="hidden text-center text-sm font-medium"></p>
           </form>
         </div>
       </section>
-    </section>
+    </main>
 
-    <footer class="text-slate-500">
-      <div class="text-center px-4 py-6 bg-slate-900">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center max-w-3xl mx-auto"
-        >
-          <div>
-            <a href="#"
-              ><img
-                src="./images/logo.png"
-                alt="nuelo brand logo"
-                class="logo mx-auto mb-4"
-            /></a>
-          </div>
-
-          <small
-            >&copy;2025 nuelo . All rights reserved . Built with passion and
-            precision</small
-          >
-
-          <ul class="flex justify-center gap-4 py-4">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/emmanuel-akalo/"
-                target="_blank"
-                ><span class="fa-brands fa-linkedin icon2"></span
-              ></a>
-            </li>
-            <li>
-              <a href="https://github.com/nuelose" target="_blank"
-                ><span class="fa-brands fa-square-github icon2"></span
-              ></a>
-            </li>
-            <li>
-              <a href="https://x.com/isNuelo" target="_blank"
-                ><span class="fa-brands fa-square-x-twitter icon2"></span
-              ></a>
-            </li>
-          </ul>
+    <footer class="border-t border-slate-200 dark:border-white/10">
+      <div class="container-x flex flex-col items-center justify-between gap-4 py-8 text-sm text-slate-500 md:flex-row">
+        <p>&copy; <span id="year">2026</span> Emmanuel Akalo · nuelo</p>
+        <div class="flex items-center gap-1">
+          <a href="https://github.com/NueloSE" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/emmanuel-akalo/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/isNuelo" target="_blank" rel="noopener" class="icon-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
       </div>
     </footer>

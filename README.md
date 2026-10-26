@@ -2,14 +2,22 @@
 
 ## Overview
 
-This repository contains the source code for my personal portfolio website, showcasing my skills and projects as a front-end web developer. Built with HTML, TailwindCSS, and JavaScript, it features a <strong>responsive design</strong>, fixed navigation, and sections highlighting my work, including the Moody App, Clipboard Landing Page, and Memecoin Creator.
+This repository contains the source code for my personal portfolio website. Built with plain HTML, Tailwind CSS v4 and vanilla JavaScript, it highlights my work on AI agents and on-chain products, including Hindsight, Formwork, Ajora, Confidium, CipherBook and Open Doors.
 
 ## Features
 
 - Responsive Design: **Optimized** for all screen sizes using TailwindCSS.
-- Fixed Navigation: Sticky nav bar for seamless browsing after scrolling past the header.
-- Project Showcase: Displays projects with descriptions, live demos, and code links.
-- Modern UI: Clean layout with hover effects, curved borders, and Material Symbols icons.
+- Light & dark mode: follows the system setting and remembers your choice.
+- Project showcase: featured case-study cards with highlights, tech stack, live demo and code links.
+- Experience timeline, grouped skills, and a contact form backed by Google Sheets.
+- Scroll-reveal animations that respect `prefers-reduced-motion`.
+
+## Development
+
+```bash
+npm install
+npm run dev   # watches input.css and rebuilds css/output.css
+```
 
 ## Tech Stack
 
